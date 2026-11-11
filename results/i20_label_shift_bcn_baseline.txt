@@ -1,0 +1,106 @@
+Label-shift study | model bcn_baseline | 5 folds | OOD n=5993 | HAM out-of-fold n=11982
+
+== A+B. balanced accuracy / macro-F1 / accuracy per method ==
+           HAM_BA  OOD_BA  OOD_macroF1  OOD_acc  drop_BA
+method                                                  
+raw        0.5360  0.5065       0.2385   0.8458   0.0295
+bcts       0.4732  0.5060       0.2428   0.8655  -0.0328
+simple     0.5744  0.5016       0.2309   0.7811   0.0728
+em         0.5412  0.3874       0.1766   0.8553   0.1537
+bcts_em    0.4602  0.3333       0.1326   0.8662   0.1268
+bbse       0.5178  0.3848       0.1721   0.8687   0.1329
+bcts_bbse  0.4090  0.3333       0.1326   0.8662   0.0757
+raw gap 2.9 pts; fraction of the raw gap closed on OOD: bcts -2%, simple -17%, em -404%, bcts_em -588%, bbse -413%, bcts_bbse -588%
+OOD-specific gain = OOD gain minus in-distribution gain of the same rule: bcts +6.2, simple -4.3, em -12.4, bcts_em -9.7, bbse -10.3, bcts_bbse -4.6
+
+== A. paired lesion-cluster bootstrap on OOD (points) ==
+   method  dBA_vs_simple          BA_CI95  BA_p  dMacroF1_vs_simple         F1_CI95
+      raw          0.487   [-0.86, +1.83] 0.438               0.753  [+0.13, +1.43]
+     bcts          0.437   [-1.34, +2.14] 0.582               1.181  [+0.31, +2.10]
+       em        -11.419  [-13.80, -9.21] 0.000              -5.438  [-6.61, -4.33]
+  bcts_em        -16.829 [-19.52, -14.22] 0.000              -9.833 [-11.02, -8.61]
+     bbse        -11.678  [-13.92, -9.30] 0.000              -5.882  [-7.03, -4.63]
+bcts_bbse        -16.829 [-19.52, -14.22] 0.000              -9.833 [-11.02, -8.61]
+   method  dBA_vs_raw          BA_CI95  BA_p  dMacroF1_vs_raw         F1_CI95
+     bcts      -0.049   [-1.14, +0.99] 0.946            0.429  [-0.14, +0.98]
+   simple      -0.487   [-1.83, +0.86] 0.438           -0.753  [-1.43, -0.13]
+       em     -11.906  [-14.01, -9.96] 0.000           -6.191  [-7.31, -5.14]
+  bcts_em     -17.316 [-19.93, -14.64] 0.000          -10.586 [-11.76, -9.29]
+     bbse     -12.165  [-14.30, -9.96] 0.000           -6.634  [-7.75, -5.41]
+bcts_bbse     -17.316 [-19.93, -14.64] 0.000          -10.586 [-11.76, -9.29]
+
+== C. prior estimation on OOD (mean over folds), true prior in last row ==
+                akiec    bcc    bkl     df    mel      nv    vasc    MAE
+method                                                                  
+bbse            3.924  1.645  2.056  4.408  0.000  83.800   4.167  0.054
+bcts_bbse       1.736  0.070  0.995  2.129  0.000  95.055   0.014  0.035
+bcts_em         0.000  0.000  0.393  0.000  0.194  99.413   0.000  0.037
+em              0.367  0.185  1.636  0.197  1.187  84.617  11.812  0.038
+TRUE OOD prior  0.000  0.000  3.688  0.000  9.695  86.618   0.000  0.000   (priors in %, MAE as fraction)
+condition number of BBSE confusion matrix P(yhat|y): raw 88.5 | bcts inf
+
+== D. CONTROLLED pure label shift: HAM test folds resampled by lesion to the OOD prior (20 draws/fold) ==
+           synthetic_BA  HAM_original_BA  real_OOD_BA
+raw              0.6032           0.5360       0.5065
+bcts             0.5940           0.4732       0.5060
+simple           0.5972           0.5744       0.5016
+em               0.6078           0.5412       0.3874
+bcts_em          0.5100           0.4602       0.3333
+bbse             0.5027           0.5178       0.3848
+bcts_bbse        0.4927           0.4090       0.3333
+           synthetic_prior_MAE  real_OOD_prior_MAE
+em                      0.0366              0.0384
+bcts_em                 0.0119              0.0366
+bbse                    0.0607              0.0541
+bcts_bbse               0.0247              0.0354
+reading: under pure label shift BA(raw) should stay close to HAM_original; if prior estimators are accurate
+on synthetic shift but poor on real OOD, the real shift is not a pure label shift.
+
+== E. OOD balanced accuracy by source proxy ==
+source    n    raw   bcts  simple     em  bcts_em  bbse  bcts_bbse
+ other 5908 0.5064 0.5054  0.4989 0.3906   0.3333 0.386     0.3333
+(source proxy is approximate: ISIC 2019 metadata has no explicit source column)
+
+== F. class-conditional prediction shift: C[i,j] = P(yhat=i | y=j), raw predictions ==
+C_S (HAM10000, out-of-fold):
+            y=akiec  y=bcc  y=bkl   y=df  y=mel   y=nv  y=vasc
+pred akiec    0.402  0.048  0.117  0.056  0.026  0.005   0.000
+pred bcc      0.303  0.832  0.134  0.242  0.066  0.045   0.108
+pred bkl      0.145  0.027  0.403  0.113  0.048  0.032   0.063
+pred df       0.004  0.005  0.007  0.226  0.002  0.004   0.045
+pred mel      0.106  0.038  0.162  0.048  0.624  0.134   0.090
+pred nv       0.041  0.043  0.177  0.306  0.230  0.778   0.207
+pred vasc     0.000  0.006  0.000  0.008  0.003  0.002   0.486
+C_T (ISIC 2019 non-HAM):
+            y=akiec  y=bcc  y=bkl  y=df  y=mel   y=nv  y=vasc
+pred akiec      0.0    0.0  0.109   0.0  0.036  0.003     0.0
+pred bcc        0.0    0.0  0.235   0.0  0.069  0.026     0.0
+pred bkl        0.0    0.0  0.294   0.0  0.052  0.007     0.0
+pred df         0.0    0.0  0.005   0.0  0.000  0.000     0.0
+pred mel        0.0    0.0  0.149   0.0  0.294  0.027     0.0
+pred nv         0.0    0.0  0.208   0.0  0.547  0.931     0.0
+pred vasc       0.0    0.0  0.000   0.0  0.002  0.007     0.0
+C_T - C_S:
+            y=akiec  y=bcc  y=bkl   y=df  y=mel   y=nv  y=vasc
+pred akiec   -0.402 -0.048 -0.008 -0.056  0.010 -0.003   0.000
+pred bcc     -0.303 -0.832  0.101 -0.242  0.003 -0.019  -0.108
+pred bkl     -0.145 -0.027 -0.109 -0.113  0.003 -0.025  -0.063
+pred df      -0.004 -0.005 -0.003 -0.226 -0.002 -0.004  -0.045
+pred mel     -0.106 -0.038 -0.012 -0.048 -0.330 -0.107  -0.090
+pred nv      -0.041 -0.043  0.032 -0.306  0.317  0.153  -0.207
+pred vasc     0.000 -0.006  0.000 -0.008 -0.001  0.005  -0.486
+||C_T - C_S||_F = 1.335;  total change of P(yhat=nv|y) over non-nv classes: -0.249
+
+BBSE prior-error decomposition (percentage points): row = estimated class, column = true class whose
+conditional shift causes the error; last column = total error (estimate - truth) without clipping
+           y=akiec  y=bcc  y=bkl  y=df  y=mel   y=nv  y=vasc  TOTAL
+est akiec     -0.0   -0.0   0.18  -0.0   0.54   2.32    -0.0   3.04
+est bcc       -0.0   -0.0   0.55  -0.0   0.04  -1.36    -0.0  -0.77
+est bkl        0.0   -0.0  -1.13   0.0   0.24  -5.38    -0.0  -6.26
+est df        -0.0   -0.0  -0.03  -0.0  -0.16  -1.96    -0.0  -2.15
+est mel        0.0   -0.0   0.08  -0.0  -6.52 -18.97    -0.0 -25.41
+est nv        -0.0    0.0   0.35  -0.0   5.86  24.39    -0.0  30.60
+est vasc      -0.0   -0.0  -0.01  -0.0  -0.00   0.96    -0.0   0.95
+largest contributors to the nevus-prior error: y=nv +24.4, y=mel +5.9, y=bkl +0.4
+note: this decomposition is an identity for BBSE; it uses target labels for analysis only, never for adaptation.
+DONE

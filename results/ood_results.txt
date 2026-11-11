@@ -1,0 +1,29 @@
+OOD test: ISIC 2019 images not in HAM10000, 14885 images, 7 classes, fold-ensemble of 5 models
+
+       experiment  balanced_accuracy        bacc_ci95  macro_f1  macro_auc  accuracy  mel_sens@spec80
+         ham_none             0.4348  [0.417, 0.4524]    0.4467     0.8462    0.6178           0.6738
+      ham_galdran             0.4416 [0.4249, 0.4588]    0.4562     0.8458    0.6317           0.6682
+       ham_chromo             0.4471 [0.4281, 0.4657]    0.4557     0.8439    0.6259           0.6750
+ham_chromo_global             0.4410  [0.4239, 0.458]    0.4497     0.8467    0.6240           0.6656
+
+[PRIMARY] ham_chromo minus ham_galdran (paired bootstrap, n=14885)
+  balanced_accuracy  +0.55 pts  CI [-0.59, +1.67]  p=0.359
+  macro_f1           -0.05 pts  CI [-1.19, +1.08]  p=0.936
+  macro_auc          -0.19 pts  CI [-0.67, +0.29]  p=0.448
+  PRIMARY ENDPOINT MET: NO
+
+[secondary] ham_chromo minus ham_none (paired bootstrap, n=14885)
+  balanced_accuracy  +1.23 pts  CI [+0.12, +2.32]  p=0.035
+  macro_f1           +0.91 pts  CI [-0.17, +1.99]  p=0.102
+  macro_auc          -0.23 pts  CI [-0.70, +0.26]  p=0.382
+
+[secondary] ham_chromo minus ham_chromo_global (paired bootstrap, n=14885)
+  balanced_accuracy  +0.61 pts  CI [-0.34, +1.55]  p=0.233
+  macro_f1           +0.61 pts  CI [-0.35, +1.57]  p=0.218
+  macro_auc          -0.28 pts  CI [-0.70, +0.17]  p=0.226
+
+[secondary] ham_galdran minus ham_none (paired bootstrap, n=14885)
+  balanced_accuracy  +0.68 pts  CI [-0.44, +1.86]  p=0.242
+  macro_f1           +0.95 pts  CI [-0.22, +2.13]  p=0.099
+  macro_auc          -0.04 pts  CI [-0.59, +0.53]  p=0.890
+DONE

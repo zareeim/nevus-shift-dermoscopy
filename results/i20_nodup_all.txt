@@ -1,0 +1,144 @@
+n_target: 5977
+exp                    bcn_baseline
+bbse_nvErr_A                -14.844
+bbse_nvErr_B                 23.304
+bbse_nvErr_C                 -2.865
+bcts_em_nvErr_A              -0.953
+bcts_em_nvErr_B              30.334
+bcts_em_nvErr_C              12.713
+melAUC_source                 0.846
+melPRAUC_source               0.656
+melAUC_target                 0.785
+melPRAUC_target               0.390
+melSens_spec80_source        73.119
+melSpec_spec80_source        81.775
+melSens_spec80_target        59.059
+melSpec_spec80_target        83.361
+melSens_spec90_source        59.083
+melSpec_spec90_source        91.299
+melSens_spec90_target        21.603
+melSpec_spec90_target        98.205
+raw_mel->nv_S                23.031
+raw_mel->nv_T                55.226
+raw_mel->other_S             14.526
+raw_mel->other_T             15.679
+raw_nv->mel_S                13.362
+raw_nv->mel_T                 2.662
+raw_other->nv_S               8.396
+raw_other->nv_T              20.642
+simple_mel->nv_S             19.566
+simple_mel->nv_T             46.516
+simple_mel->other_S          19.706
+simple_mel->other_T          25.436
+simple_nv->mel_S             13.623
+simple_nv->mel_T              2.932
+simple_other->nv_S            5.550
+simple_other->nv_T           12.844
+ECE_source                    0.094
+conf_melnv_source             0.747
+ECE_target                    0.107
+conf_melnv_target             0.680
+DONE
+Matched-protocol analysis: fold model k on its own source test fold vs the same model on the target.
+Values: mean over 5 folds [min, max]; 'ens' = 5-model ensemble on the target (as reported before).
+
+===== bcn_baseline | target ISIC2020 | n_target=5977 =====
+-- M1. matched per-fold metrics (%)
+rule = raw
+           source (per fold)  target (per fold) target - source (per fold) target (ens)
+BA         53.6 [50.7, 56.5]  49.4 [46.3, 51.0]          -4.2 [-7.2, -1.1]         50.4
+acc        68.7 [68.3, 69.0]  80.9 [79.3, 82.7]       +12.2 [+10.5, +13.8]         84.7
+mel_sens   62.4 [58.1, 65.9]  29.7 [26.3, 32.1]       -32.7 [-39.6, -28.5]         29.1
+mel->nv    23.0 [21.0, 25.6]  52.1 [49.8, 53.8]       +29.0 [+26.5, +32.9]         55.2
+other->nv     8.4 [5.9, 9.9]  22.0 [18.3, 25.7]       +13.6 [+11.6, +17.3]         20.6
+nv->mel    13.4 [11.1, 14.9]     4.8 [4.1, 6.1]         -8.5 [-10.5, -6.4]          2.7
+nv_recall  77.8 [76.3, 78.6]  88.7 [87.0, 90.5]        +10.9 [+8.4, +14.2]         93.2
+rule = simple
+           source (per fold)  target (per fold) target - source (per fold) target (ens)
+BA         57.5 [55.3, 59.7]  47.7 [42.2, 50.8]         -9.7 [-13.1, -5.3]         49.9
+acc        66.7 [65.6, 67.5]  74.3 [70.5, 79.0]         +7.6 [+3.8, +12.7]         78.2
+mel_sens   60.7 [56.4, 63.3]  27.9 [23.9, 30.7]       -32.8 [-39.4, -28.7]         28.0
+mel->nv    19.6 [18.7, 21.4]  43.7 [42.0, 46.3]       +24.1 [+22.7, +27.5]         46.5
+other->nv     5.6 [3.8, 6.8]  15.0 [13.8, 17.4]         +9.4 [+7.9, +11.2]         12.8
+nv->mel    13.6 [11.5, 16.2]     4.7 [4.1, 6.0]         -8.9 [-11.3, -6.6]          2.9
+nv_recall  72.1 [69.2, 74.2]  81.1 [77.6, 86.2]         +9.1 [+4.0, +17.0]         85.5
+-- matched fold-averaged differences with 95% lesion-cluster CIs (1000 replicates; target lesions resampled once per replicate)
+                         estimate  CI_low  CI_high
+drop (S-T BA)                4.18    0.75     8.11
+mel->nv increase            29.02   23.71    33.89
+other->nv increase          13.62    8.36    19.00
+simple-raw BA (T)           -1.70   -2.26    -1.09
+simple-raw mel_sens (T)     -1.78   -2.70    -0.88
+-- M2. BBSE nevus-prior error per fold (points): as estimated (clipped) | exact unclipped decomposition
+ fold  BBSE_nv_error_as_estimated  identity_unclipped  cond_number
+    0                        7.66               22.76        19.99
+    1                        1.43               28.82        26.15
+    2                      -34.55               -2.30       377.42
+    3                        9.11               26.22         8.67
+    4                        2.02               13.85        10.06
+mean contribution of each true class (validation C_S, same matrices as the estimator):
+akiec     0.00
+bcc       0.00
+bkl       1.17
+df        0.00
+mel       6.45
+nv       10.26
+vasc      0.00
+same with the source TEST fold as C_S (larger, sensitivity check):
+akiec     0.00
+bcc       0.00
+bkl       0.39
+df        0.00
+mel       5.28
+nv       17.14
+vasc      0.00
+TOTAL 22.82
+-- M3. simple rule on the target with different source priors (per-fold mean [min, max])
+                                   BA             mel_sens             nv_recall            
+                                 mean   min   max     mean   min   max      mean   min   max
+prior                                                                                       
+BCTS-calibrated mean             50.1  44.5  52.8     30.5  23.9  34.1      85.4  82.2  88.1
+effective (mean val prediction)  47.7  42.2  50.8     27.9  23.9  30.7      81.1  77.6  86.2
+raw label frequency              11.1   8.9  12.7      7.4   6.4   8.2       3.6   1.7   8.5
+
+===== SUMMARY (per-fold means, raw rule unless stated) =====
+         exp   target  S_BA  T_BA  drop  mel->nv S  mel->nv T  other->nv S  other->nv T  nv->mel S  nv->mel T  simple-raw BA (T)  simple-raw mel_sens (T)  BBSE nv err (est)  BBSE nv err (identity)  mel contribution
+bcn_baseline ISIC2020  53.6  49.4   4.2       23.0       52.1          8.4         22.0       13.4        4.8               -1.7                     -1.8               -2.9                    17.9               6.4
+DONE
+Safety analysis | bcn_baseline | OOD n=5977 | 5-fold ensemble | 95% lesion-cluster bootstrap (1000)
+
+== 1. all OOD images ==
+         metric  raw_%       raw_CI  simple_%    simple_CI  diff_pts       diff_CI     p
+mel_sensitivity 29.094 [25.5, 33.1]    28.049 [24.4, 32.1]    -1.045   [-2.9, 0.8] 0.306
+      mel_to_nv 55.226 [51.0, 59.1]    46.516 [42.5, 50.7]    -8.711 [-11.1, -6.6] 0.000
+      nv_recall 93.153 [92.4, 93.9]    85.477 [84.3, 86.6]    -7.676  [-8.5, -6.9] 0.000
+   balanced_acc 50.382 [47.7, 53.1]    49.922 [47.1, 52.6]    -0.461   [-1.8, 0.9] 0.476
+per-class recall:
+        akiec  bcc    bkl  df    mel     nv  vasc
+raw       NaN  NaN  0.289 NaN  0.291  0.932   NaN
+simple    NaN  NaN  0.362 NaN  0.280  0.855   NaN
+
+== 2. where do true nevi go? (% of all nevi) ==
+        pred akiec  pred bcc  pred bkl  pred df  pred mel  pred nv  pred vasc
+raw            0.3       2.5       0.7      0.0       2.7     93.2        0.7
+simple         1.0       2.2       1.9      0.6       2.9     85.5        6.0
+
+== 3. per source proxy ==
+-- other (n=5892, melanomas=545, nevi=5140)
+         metric  raw_%       raw_CI  simple_%    simple_CI  diff_pts       diff_CI     p
+mel_sensitivity 27.339 [23.6, 31.2]    26.055 [22.2, 30.3]    -1.284   [-3.4, 0.8] 0.244
+      mel_to_nv 56.514 [51.7, 61.2]    47.890 [43.1, 52.2]    -8.624 [-11.1, -6.3] 0.000
+      nv_recall 93.307 [92.5, 94.0]    85.642 [84.4, 86.8]    -7.665  [-8.5, -6.8] 0.000
+   balanced_acc 50.361 [47.8, 53.1]    49.632 [46.8, 52.5]    -0.729   [-2.1, 0.6] 0.296
+
+== 4. per source: P(yhat=nv | y) and BBSE nevus-prior error decomposition (raw predictions) ==
+P(yhat=nv | true class):
+                         akiec    bcc    bkl     df    mel     nv   vasc
+set                                                                     
+source (own test folds)  0.041  0.043  0.177  0.306  0.230  0.778  0.207
+other                    0.000  0.000  0.203  0.000  0.565  0.933  0.000
+contribution of each true class to the BBSE nevus-prior error (percentage points):
+        akiec  bcc   bkl   df   mel     nv  vasc  TOTAL nv error
+source                                                          
+other    -0.0  0.0  0.33 -0.0  5.91  24.89  -0.0           31.12
+DONE

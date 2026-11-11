@@ -1,0 +1,53 @@
+Extra analyses | ham_convnext_baseline | source out-of-fold n=10015 | target n=14885 | 5 folds | 1000 lesion-cluster bootstraps
+
+== G. prior estimators under three conditions (20 lesion-level resamples per fold for A and B) ==
+balanced accuracy (%) per method:
+                           raw  bcts  simple    em  bcts_em  bbse  bcts_bbse
+condition                                                                   
+A pure label shift        76.2  72.5    78.4  76.6     67.8  75.3       72.3
+B pure class-conditional  42.7  39.7    45.9  42.7     37.9  41.7       38.8
+C real target             42.6  39.7    45.9  43.4     36.9  42.3       39.1
+prior estimation: MAE (fraction) | error of the NEVUS prior (points) | error of the MELANOMA prior (points)
+                            MAE                          nv_error                           mel_error                         
+                             em bcts_em   bbse bcts_bbse       em bcts_em    bbse bcts_bbse        em bcts_em   bbse bcts_bbse
+condition                                                                                                                     
+A pure label shift        0.043   0.014  0.012     0.012   -8.676   1.520   1.638     1.435    -5.864  -3.280 -1.532    -1.022
+B pure class-conditional  0.036   0.022  0.018     0.022   -6.185   7.175   5.643     7.430    -2.516  -1.256 -1.752    -1.845
+C real target             0.047   0.044  0.043     0.047   -2.482  13.877  13.051    15.217    -9.444  -6.770 -6.352    -6.091
+reading: in B the true prior is the source prior, so any nevus-prior error there comes only from the
+class-conditional shift; A isolates the prior change; C is the real target.
+
+== H. melanoma vs rest ==
+        prevalence_%  ROC_AUC      AUC_CI  PR_AUC       PR_CI
+set                                                          
+source        11.113    0.875  [0.9, 0.9]   0.592  [0.6, 0.6]
+target        22.902    0.803  [0.8, 0.8]   0.625  [0.6, 0.7]
+(PR-AUC depends on prevalence; compare it with the prevalence column)
+operating points chosen on SOURCE validation (threshold on p(mel)), applied unchanged:
+spec_target_on_source_val    set  threshold  sensitivity_%      sens_CI  specificity_%  ROC_sens_at_this_spec_%(analysis)
+                      80% source      0.016         85.535 [83.1, 88.0]         79.162                             85.175
+                      80% target      0.016         80.229 [78.0, 82.5]         60.840                             65.650
+                      90% source      0.022         75.651 [72.5, 78.6]         89.047                             73.944
+                      90% target      0.022         70.607 [67.8, 73.6]         74.181                             53.975
+reading: if ROC-AUC holds but sensitivity at the source-chosen threshold falls, the ranking still works
+and the operating point moved; if ROC-AUC also falls, the features themselves transfer less well.
+
+== I. directional errors, % of the true class (95% lesion-cluster CI) ==
+  rule       path  source_%    source_CI  target_%    target_CI  target-source_pts      diff_CI  diff_CI_excludes_0
+   raw    mel->nv     34.77 [31.1, 38.4]     47.93 [44.7, 51.1]              13.16  [8.4, 18.2]                True
+   raw mel->other      9.61  [7.5, 11.9]     12.17 [10.4, 14.2]               2.56  [-0.3, 5.3]               False
+   raw    nv->mel      2.73   [2.3, 3.2]      2.76   [2.2, 3.4]               0.03  [-0.6, 0.8]               False
+   raw  other->nv      8.92  [7.6, 10.5]     29.46 [27.6, 31.3]              20.54 [18.2, 22.9]                True
+simple    mel->nv     29.92 [26.2, 33.3]     34.09 [31.2, 37.3]               4.17  [-0.0, 9.1]               False
+simple mel->other     11.23  [8.8, 13.4]     18.74 [16.5, 21.0]               7.51  [4.4, 10.7]                True
+simple    nv->mel      3.92   [3.4, 4.5]      6.55   [5.8, 7.5]               2.63   [1.6, 3.7]                True
+simple  other->nv      6.05   [4.9, 7.3]     14.68 [13.4, 16.0]               8.63  [6.8, 10.4]                True
+(source and target are resampled independently; 'other' = every class except mel and nv)
+
+== J. confidence (raw ensemble probabilities) ==
+        n_mel->nv  mean_conf_mel->nv  share_mel->nv_conf>=0.8_%  mean_conf_correct_mel  mean_conf_all  accuracy    ECE
+set                                                                                                                   
+source        387              0.788                     72.351                  0.880          0.839     0.866  0.108
+target       1634              0.710                     48.286                  0.739          0.730     0.635  0.095
+note: ensemble averaging lowers the maximum probability; compare source with target, not with 1.0.
+DONE

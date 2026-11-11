@@ -1,0 +1,37 @@
+Safety analysis | ham_baseline_s43 | OOD n=5993 | 5-fold ensemble | 95% lesion-cluster bootstrap (1000)
+
+== 1. all OOD images ==
+         metric  raw_%       raw_CI  simple_%    simple_CI  diff_pts        diff_CI   p
+mel_sensitivity 12.220  [9.5, 14.9]    20.998 [17.5, 24.6]     8.778    [6.5, 11.4] 0.0
+      mel_to_nv 75.731 [72.1, 79.5]    53.012 [48.5, 57.7]   -22.719 [-26.3, -19.4] 0.0
+      nv_recall 98.883 [98.6, 99.2]    94.452 [93.5, 95.3]    -4.431   [-5.2, -3.7] 0.0
+   balanced_acc 46.235 [43.8, 48.8]    50.097 [47.6, 52.6]     3.862     [2.2, 5.7] 0.0
+per-class recall:
+        akiec  bcc    bkl  df    mel     nv  vasc
+raw       NaN  NaN  0.276 NaN  0.122  0.989   NaN
+simple    NaN  NaN  0.348 NaN  0.210  0.945   NaN
+
+== 2. where do true nevi go? (% of all nevi) ==
+        pred akiec  pred bcc  pred bkl  pred df  pred mel  pred nv  pred vasc
+raw            0.0       0.2       0.5      0.1       0.3     98.9        0.1
+simple         0.3       0.8       0.9      1.4       0.9     94.5        1.3
+
+== 3. per source proxy ==
+-- other (n=5908, melanomas=552, nevi=5146)
+         metric  raw_%       raw_CI  simple_%    simple_CI  diff_pts        diff_CI   p
+mel_sensitivity 12.500  [9.7, 15.3]    21.558 [18.0, 25.4]     9.058    [6.7, 11.4] 0.0
+      mel_to_nv 75.543 [71.8, 79.3]    52.899 [48.5, 57.6]   -22.645 [-26.1, -19.4] 0.0
+      nv_recall 98.892 [98.6, 99.2]    94.656 [93.7, 95.5]    -4.236   [-5.0, -3.5] 0.0
+   balanced_acc 46.655 [44.1, 49.1]    50.801 [48.1, 53.2]     4.147     [2.4, 5.9] 0.0
+
+== 4. per source: P(yhat=nv | y) and BBSE nevus-prior error decomposition (raw predictions) ==
+P(yhat=nv | true class):
+                         akiec   bcc    bkl     df    mel     nv   vasc
+set                                                                    
+source (own test folds)   0.04  0.06  0.129  0.139  0.324  0.949  0.049
+other                     0.00  0.00  0.481  0.000  0.755  0.989  0.000
+contribution of each true class to the BBSE nevus-prior error (percentage points):
+        akiec  bcc   bkl   df  mel    nv  vasc  TOTAL nv error
+source                                                        
+other     0.0  0.0  1.66 -0.0  6.8  5.26  -0.0           13.72
+DONE

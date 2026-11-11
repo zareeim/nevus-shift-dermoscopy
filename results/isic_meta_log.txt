@@ -1,0 +1,46 @@
+107 cached, 15209 to fetch
+  0/15209
+  500/15209
+  1000/15209
+  1500/15209
+  2000/15209
+  2500/15209
+  3000/15209
+  3500/15209
+  4000/15209
+  4500/15209
+  5000/15209
+  5500/15209
+  6000/15209
+  6500/15209
+  7000/15209
+  7500/15209
+  8000/15209
+  8500/15209
+  9000/15209
+  9500/15209
+  10000/15209
+  10500/15209
+  11000/15209
+  11500/15209
+  12000/15209
+  12500/15209
+  13000/15209
+  13500/15209
+  14000/15209
+  14500/15209
+  15000/15209
+example record: {"public": true, "isic_id": "ISIC_0000000", "copyright_license": "CC-0", "attribution": "Anonymous", "files": {"full": {"url": "https://isic-archive.s3.amazonaws.com/images/ISIC_0000000.jpg", "size": 50993}, "thumbnail_256": {"url": "https://isic-archive.s3.amazonaws.com/thumbnails/ISIC_0000000_thumbnail.jpg", "size": 5073}}, "metadata": {"acquisition": {"pixels_x": 1022, "pixels_y": 767, "image_type": "dermoscopic"}, "clinical": {"concomitant_biopsy": false, "sex": "female", "anatom_site_1": "Trunk", "anatom_site_2": "Anterior trunk", "anatom_site_3": "Anterior abdomen", "diagnosis_1": "Benign", "diagnosis_2": "Benign melanocytic proliferations", "diagnosis_3": "Nevus", "diagnosis_4": "Nevus, Atypical, Dysplastic, or Clark", "diagnosis_5": "Nevus, Dysplastic", "melanocytic": true, "age_approx": 55}}}
+15316 rows -> isic_metadata.csv; API errors: 16 (0.1%)
+non-empty attribution: 99.9%; distinct attributions: 2
+metadata fields returned: ['acquisition.pixels_x', 'acquisition.pixels_y', 'acquisition.image_type', 'clinical.concomitant_biopsy', 'clinical.sex', 'clinical.anatom_site_1', 'clinical.anatom_site_2', 'clinical.anatom_site_3', 'clinical.diagnosis_1', 'clinical.diagnosis_2', 'clinical.diagnosis_3', 'clinical.diagnosis_4', 'clinical.diagnosis_5', 'clinical.melanocytic', 'clinical.age_approx', 'clinical.diagnosis_confirm_type', 'clinical.anatom_site_4', 'clinical.anatom_site_special', 'clinical.anatom_site_5', 'clinical.personal_hx_mm', 'clinical.family_hx_mm', 'clinical.clin_size_long_diam_mm', 'acquisition.dermoscopic_type', 'clinical.lesion_id', 'clinical.patient_id']
+attribution (top 15):
+attribution
+Hospital Clínic de Barcelona    12397
+Anonymous                        2903
+clinical.diagnosis_confirm_type:
+clinical.diagnosis_confirm_type
+histopathology                                   11699
+NaN                                               2471
+confocal microscopy with consensus dermoscopy      766
+single image expert consensus                      380

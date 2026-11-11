@@ -1,0 +1,44 @@
+ (per-fold means, raw rule unless stated) =====
+         exp   target  S_BA  T_BA  drop  mel->nv S  mel->nv T  other->nv S  other->nv T  nv->mel S  nv->mel T  simple-raw BA (T)  simple-raw mel_sens (T)  BBSE nv err (est)  BBSE nv err (identity)  mel contribution
+ham_nofollow ISIC2019  76.0  43.0  33.0       34.0       48.7          9.7         28.5        5.7        4.0                6.3                      3.2               16.1                    16.1               7.2
+ham_nofollow  Derm7pt  76.0  53.4  22.7       34.0       44.5          9.7         29.5        5.7        5.7                5.7                      6.1                5.9                     6.7               4.7
+ham_baseline ISIC2019  75.3  41.8  33.5       33.4       49.6          9.9         30.2        2.9        4.4                6.6                      7.2               13.6                    13.6               7.5
+ham_baseline  Derm7pt  75.3  52.7  22.5       33.4       43.2          9.9         32.6        2.9        6.7                5.8                     10.7                1.5                     2.6               4.9
+DONE
+
+===== ham_nofollow | target ISIC2019 | n_target=14885 =====
+ with 95% lesion-cluster CIs (2000 replicates; target lesions resampled once per replicate)
+                         estimate  CI_low  CI_high
+drop (S-T BA)               33.03   29.66    36.52
+mel->nv increase            14.70   10.21    19.61
+other->nv increase          18.72   16.51    20.98
+simple-raw BA (T)            6.34    5.00     7.82
+simple-raw mel_sens (T)      3.23    2.63     3.85
+
+===== ham_nofollow | target Derm7pt | n_target=983 =====
+ with 95% lesion-cluster CIs (2000 replicates; target lesions resampled once per replicate)
+                         estimate  CI_low  CI_high
+drop (S-T BA)               22.68   17.62    27.88
+mel->nv increase            10.55    4.59    16.64
+other->nv increase          19.76   13.99    26.04
+simple-raw BA (T)            5.71    3.53     7.93
+simple-raw mel_sens (T)      6.13    4.44     7.90
+
+===== ham_baseline | target ISIC2019 | n_target=14885 =====
+ with 95% lesion-cluster CIs (2000 replicates; target lesions resampled once per replicate)
+                         estimate  CI_low  CI_high
+drop (S-T BA)               33.47   30.16    36.99
+mel->nv increase            16.20   11.47    20.88
+other->nv increase          20.32   18.09    22.47
+simple-raw BA (T)            6.56    5.30     7.85
+simple-raw mel_sens (T)      7.19    6.45     7.97
+
+===== ham_baseline | target Derm7pt | n_target=983 =====
+ with 95% lesion-cluster CIs (2000 replicates; target lesions resampled once per replicate)
+                         estimate  CI_low  CI_high
+drop (S-T BA)               22.53   17.70    27.52
+mel->nv increase             9.80    3.72    15.26
+other->nv increase          22.75   16.91    28.82
+simple-raw BA (T)            5.85    3.91     7.98
+simple-raw mel_sens (T)     10.73    8.87    12.49
+

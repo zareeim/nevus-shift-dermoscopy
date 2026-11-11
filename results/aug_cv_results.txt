@@ -1,0 +1,117 @@
+##### in-distribution (HAM10000, 5-fold test, lesion-grouped) - SECONDARY
+                  balanced_accuracy         macro_f1         macro_auc         accuracy             ece         mel_sens@spec80         mel_sens@spec90         n_folds
+                               mean     std     mean     std      mean     std     mean     std    mean     std            mean     std            mean     std        
+experiment                                                                                                                                                             
+ham_chromo                   0.7468  0.0404   0.7561  0.0312    0.9419  0.0098   0.8583  0.0050  0.0773  0.0044          0.8850  0.0321          0.7637  0.0308       5
+ham_chromo_global            0.7586  0.0275   0.7699  0.0149    0.9398  0.0063   0.8652  0.0034  0.0796  0.0031          0.8661  0.0152          0.7628  0.0165       5
+ham_galdran                  0.7530  0.0248   0.7619  0.0182    0.9448  0.0102   0.8597  0.0034  0.0805  0.0048          0.8670  0.0197          0.7484  0.0360       5
+ham_none                     0.7525  0.0242   0.7639  0.0137    0.9390  0.0071   0.8618  0.0069  0.0808  0.0046          0.8652  0.0225          0.7664  0.0329       5
+ham_chromo minus ham_galdran  (paired bootstrap, n=10015 pooled test images)
+{
+ "balanced_accuracy": {
+  "delta": -0.006223620593175716,
+  "ci95": [
+   -0.02182991276102546,
+   0.009093192734779558
+  ],
+  "p_two_sided": 0.4
+ },
+ "macro_f1": {
+  "delta": -0.005033085663005421,
+  "ci95": [
+   -0.018569075557938443,
+   0.00841818364746654
+  ],
+  "p_two_sided": 0.433
+ },
+ "macro_auc": {
+  "delta": -0.003000709018589953,
+  "ci95": [
+   -0.010264472511169931,
+   0.004251336931273889
+  ],
+  "p_two_sided": 0.427
+ }
+}
+ham_chromo minus ham_none  (paired bootstrap, n=10015 pooled test images)
+{
+ "balanced_accuracy": {
+  "delta": -0.005725892007948485,
+  "ci95": [
+   -0.01976379038720055,
+   0.008894674739163708
+  ],
+  "p_two_sided": 0.424
+ },
+ "macro_f1": {
+  "delta": -0.007370239946157153,
+  "ci95": [
+   -0.02084330724352165,
+   0.006107804459782249
+  ],
+  "p_two_sided": 0.253
+ },
+ "macro_auc": {
+  "delta": 0.002885017577000215,
+  "ci95": [
+   -0.0041438903834894346,
+   0.009740291973861523
+  ],
+  "p_two_sided": 0.42
+ }
+}
+ham_chromo minus ham_chromo_global  (paired bootstrap, n=10015 pooled test images)
+{
+ "balanced_accuracy": {
+  "delta": -0.011934233133067518,
+  "ci95": [
+   -0.02597136563620709,
+   0.002402174067233013
+  ],
+  "p_two_sided": 0.102
+ },
+ "macro_f1": {
+  "delta": -0.013446268437853903,
+  "ci95": [
+   -0.02625134885326706,
+   -0.000876207191374616
+  ],
+  "p_two_sided": 0.037
+ },
+ "macro_auc": {
+  "delta": 0.0020696680969558567,
+  "ci95": [
+   -0.005001281316886597,
+   0.009459675360438917
+  ],
+  "p_two_sided": 0.617
+ }
+}
+ham_galdran minus ham_none  (paired bootstrap, n=10015 pooled test images)
+{
+ "balanced_accuracy": {
+  "delta": 0.0004977285852272306,
+  "ci95": [
+   -0.013270603957368596,
+   0.014579500893174627
+  ],
+  "p_two_sided": 0.923
+ },
+ "macro_f1": {
+  "delta": -0.0023371542831517322,
+  "ci95": [
+   -0.015180082125580963,
+   0.0102375638247096
+  ],
+  "p_two_sided": 0.758
+ },
+ "macro_auc": {
+  "delta": 0.005885726595590168,
+  "ci95": [
+   -0.001887298731039591,
+   0.01391362628907114
+  ],
+  "p_two_sided": 0.139
+ }
+}
+DONE

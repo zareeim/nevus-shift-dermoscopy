@@ -1,0 +1,194 @@
+nohup: ignoring input
+all images 10015; nevi 6705; follow-up nevi removed 3704
+remaining class counts:
+label
+nv       3001
+mel      1113
+bkl      1099
+bcc       514
+akiec     327
+vasc      142
+df        115
+images per outer fold:
+fold
+0    1249
+1    1262
+2    1271
+3    1260
+4    1269
+config=baseline device=cuda train=4429 val=633
+ep 001 loss 1.6630 val bacc 0.6262 f1 0.5925 auc 0.8922 (37s)
+ep 002 loss 1.2074 val bacc 0.7215 f1 0.6907 auc 0.9411 (36s)
+ep 003 loss 1.0922 val bacc 0.8053 f1 0.7475 auc 0.9562 (36s)
+ep 004 loss 0.9884 val bacc 0.8209 f1 0.7711 auc 0.9595 (36s)
+ep 005 loss 0.8944 val bacc 0.8234 f1 0.7734 auc 0.9644 (37s)
+ep 006 loss 0.8231 val bacc 0.8221 f1 0.7740 auc 0.9636 (38s)
+ep 007 loss 0.7837 val bacc 0.8331 f1 0.7766 auc 0.9650 (38s)
+ep 008 loss 0.7444 val bacc 0.8342 f1 0.7795 auc 0.9674 (38s)
+ep 009 loss 0.7109 val bacc 0.8359 f1 0.7835 auc 0.9680 (39s)
+ep 010 loss 0.6765 val bacc 0.8440 f1 0.7903 auc 0.9674 (39s)
+ep 011 loss 0.6526 val bacc 0.8460 f1 0.7904 auc 0.9679 (39s)
+ep 012 loss 0.6119 val bacc 0.8468 f1 0.7930 auc 0.9698 (40s)
+ep 013 loss 0.5999 val bacc 0.8464 f1 0.7894 auc 0.9703 (40s)
+ep 014 loss 0.5748 val bacc 0.8537 f1 0.8038 auc 0.9693 (40s)
+ep 015 loss 0.5402 val bacc 0.8524 f1 0.8002 auc 0.9665 (40s)
+ep 016 loss 0.5297 val bacc 0.8373 f1 0.8007 auc 0.9656 (40s)
+ep 017 loss 0.5161 val bacc 0.8431 f1 0.7953 auc 0.9669 (40s)
+ep 018 loss 0.4963 val bacc 0.8429 f1 0.7988 auc 0.9664 (41s)
+ep 019 loss 0.4931 val bacc 0.8446 f1 0.8074 auc 0.9639 (41s)
+ep 020 loss 0.4844 val bacc 0.8519 f1 0.8141 auc 0.9624 (40s)
+ep 021 loss 0.4735 val bacc 0.8510 f1 0.8073 auc 0.9610 (40s)
+ep 022 loss 0.4646 val bacc 0.8436 f1 0.8049 auc 0.9602 (41s)
+ep 023 loss 0.4570 val bacc 0.8416 f1 0.8083 auc 0.9592 (41s)
+ep 024 loss 0.4511 val bacc 0.8355 f1 0.8025 auc 0.9589 (40s)
+ep 025 loss 0.4497 val bacc 0.8329 f1 0.8004 auc 0.9587 (41s)
+ep 026 loss 0.4480 val bacc 0.8299 f1 0.7954 auc 0.9582 (42s)
+ep 027 loss 0.4468 val bacc 0.8273 f1 0.7914 auc 0.9578 (42s)
+ep 028 loss 0.4477 val bacc 0.8265 f1 0.7897 auc 0.9576 (41s)
+ep 029 loss 0.4450 val bacc 0.8257 f1 0.7901 auc 0.9574 (41s)
+ep 030 loss 0.4425 val bacc 0.8244 f1 0.7888 auc 0.9574 (40s)
+VAL: {"balanced_accuracy": 0.8244, "macro_f1": 0.7888, "macro_auc": 0.9574}
+TEST: {"balanced_accuracy": 0.7498, "macro_f1": 0.7628, "macro_auc": 0.9374}
+config=baseline device=cuda train=4418 val=631
+ep 001 loss 1.6707 val bacc 0.5545 f1 0.5571 auc 0.8695 (40s)
+ep 002 loss 1.2175 val bacc 0.6214 f1 0.6211 auc 0.9220 (40s)
+ep 003 loss 1.0843 val bacc 0.6851 f1 0.6854 auc 0.9401 (40s)
+ep 004 loss 0.9826 val bacc 0.6927 f1 0.6959 auc 0.9485 (40s)
+ep 005 loss 0.8953 val bacc 0.7117 f1 0.7058 auc 0.9493 (40s)
+ep 006 loss 0.8396 val bacc 0.7192 f1 0.7123 auc 0.9555 (41s)
+ep 007 loss 0.7797 val bacc 0.7335 f1 0.7263 auc 0.9505 (41s)
+ep 008 loss 0.7402 val bacc 0.7389 f1 0.7362 auc 0.9499 (41s)
+ep 009 loss 0.7142 val bacc 0.7440 f1 0.7418 auc 0.9568 (41s)
+ep 010 loss 0.6597 val bacc 0.7342 f1 0.7283 auc 0.9551 (41s)
+ep 011 loss 0.6495 val bacc 0.7528 f1 0.7434 auc 0.9565 (41s)
+ep 012 loss 0.6111 val bacc 0.7171 f1 0.7188 auc 0.9571 (41s)
+ep 013 loss 0.5904 val bacc 0.7210 f1 0.7206 auc 0.9560 (40s)
+ep 014 loss 0.5580 val bacc 0.7381 f1 0.7416 auc 0.9564 (41s)
+ep 015 loss 0.5377 val bacc 0.7141 f1 0.7212 auc 0.9548 (41s)
+ep 016 loss 0.5138 val bacc 0.7222 f1 0.7287 auc 0.9529 (41s)
+ep 017 loss 0.5166 val bacc 0.7164 f1 0.7224 auc 0.9517 (40s)
+ep 018 loss 0.4906 val bacc 0.7064 f1 0.7249 auc 0.9502 (41s)
+ep 019 loss 0.4847 val bacc 0.7126 f1 0.7317 auc 0.9494 (41s)
+ep 020 loss 0.4733 val bacc 0.7170 f1 0.7343 auc 0.9487 (41s)
+ep 021 loss 0.4658 val bacc 0.7182 f1 0.7330 auc 0.9478 (41s)
+ep 022 loss 0.4612 val bacc 0.7232 f1 0.7435 auc 0.9467 (41s)
+ep 023 loss 0.4534 val bacc 0.7224 f1 0.7417 auc 0.9429 (41s)
+ep 024 loss 0.4529 val bacc 0.7189 f1 0.7436 auc 0.9405 (41s)
+ep 025 loss 0.4446 val bacc 0.7153 f1 0.7347 auc 0.9406 (41s)
+ep 026 loss 0.4458 val bacc 0.7192 f1 0.7368 auc 0.9414 (41s)
+ep 027 loss 0.4436 val bacc 0.7235 f1 0.7403 auc 0.9419 (41s)
+ep 028 loss 0.4424 val bacc 0.7250 f1 0.7434 auc 0.9424 (41s)
+ep 029 loss 0.4425 val bacc 0.7250 f1 0.7423 auc 0.9421 (41s)
+ep 030 loss 0.4402 val bacc 0.7271 f1 0.7441 auc 0.9421 (41s)
+VAL: {"balanced_accuracy": 0.7271, "macro_f1": 0.7441, "macro_auc": 0.9421}
+TEST: {"balanced_accuracy": 0.7748, "macro_f1": 0.7909, "macro_auc": 0.949}
+config=baseline device=cuda train=4409 val=631
+ep 001 loss 1.6773 val bacc 0.6177 f1 0.6015 auc 0.9235 (40s)
+ep 002 loss 1.2129 val bacc 0.6977 f1 0.7031 auc 0.9524 (40s)
+ep 003 loss 1.1022 val bacc 0.7711 f1 0.7451 auc 0.9555 (41s)
+ep 004 loss 0.9979 val bacc 0.7592 f1 0.7479 auc 0.9594 (42s)
+ep 005 loss 0.9039 val bacc 0.7421 f1 0.7369 auc 0.9548 (41s)
+ep 006 loss 0.8538 val bacc 0.7410 f1 0.7415 auc 0.9623 (41s)
+ep 007 loss 0.7888 val bacc 0.7653 f1 0.7616 auc 0.9567 (41s)
+ep 008 loss 0.7576 val bacc 0.7869 f1 0.7888 auc 0.9664 (40s)
+ep 009 loss 0.7054 val bacc 0.7672 f1 0.7614 auc 0.9658 (42s)
+ep 010 loss 0.6852 val bacc 0.7598 f1 0.7605 auc 0.9619 (41s)
+ep 011 loss 0.6460 val bacc 0.7713 f1 0.7796 auc 0.9588 (41s)
+ep 012 loss 0.6158 val bacc 0.7659 f1 0.7753 auc 0.9655 (41s)
+ep 013 loss 0.5986 val bacc 0.7667 f1 0.7772 auc 0.9647 (41s)
+ep 014 loss 0.5693 val bacc 0.7792 f1 0.7936 auc 0.9601 (41s)
+ep 015 loss 0.5537 val bacc 0.7961 f1 0.8049 auc 0.9609 (41s)
+ep 016 loss 0.5371 val bacc 0.7977 f1 0.8065 auc 0.9488 (41s)
+ep 017 loss 0.5158 val bacc 0.7853 f1 0.7952 auc 0.9441 (41s)
+ep 018 loss 0.4980 val bacc 0.7774 f1 0.7876 auc 0.9431 (41s)
+ep 019 loss 0.4901 val bacc 0.7662 f1 0.7723 auc 0.9439 (40s)
+ep 020 loss 0.4788 val bacc 0.7682 f1 0.7679 auc 0.9438 (41s)
+ep 021 loss 0.4743 val bacc 0.7747 f1 0.7810 auc 0.9431 (41s)
+ep 022 loss 0.4579 val bacc 0.7725 f1 0.7787 auc 0.9427 (41s)
+ep 023 loss 0.4585 val bacc 0.7779 f1 0.7783 auc 0.9424 (41s)
+ep 024 loss 0.4551 val bacc 0.7861 f1 0.7831 auc 0.9423 (41s)
+ep 025 loss 0.4508 val bacc 0.7877 f1 0.7831 auc 0.9423 (41s)
+ep 026 loss 0.4473 val bacc 0.7868 f1 0.7828 auc 0.9423 (41s)
+ep 027 loss 0.4471 val bacc 0.7868 f1 0.7850 auc 0.9414 (40s)
+ep 028 loss 0.4424 val bacc 0.7771 f1 0.7760 auc 0.9410 (41s)
+ep 029 loss 0.4392 val bacc 0.7789 f1 0.7826 auc 0.9406 (41s)
+ep 030 loss 0.4420 val bacc 0.7802 f1 0.7844 auc 0.9403 (41s)
+VAL: {"balanced_accuracy": 0.7802, "macro_f1": 0.7844, "macro_auc": 0.9403}
+TEST: {"balanced_accuracy": 0.7601, "macro_f1": 0.7744, "macro_auc": 0.9378}
+config=baseline device=cuda train=4419 val=632
+ep 001 loss 1.6688 val bacc 0.6112 f1 0.5655 auc 0.9122 (40s)
+ep 002 loss 1.2025 val bacc 0.6791 f1 0.6931 auc 0.9397 (40s)
+ep 003 loss 1.0976 val bacc 0.7559 f1 0.7285 auc 0.9515 (40s)
+ep 004 loss 0.9770 val bacc 0.8058 f1 0.7943 auc 0.9571 (41s)
+ep 005 loss 0.9022 val bacc 0.7998 f1 0.7835 auc 0.9589 (41s)
+ep 006 loss 0.8523 val bacc 0.8145 f1 0.7947 auc 0.9586 (41s)
+ep 007 loss 0.8056 val bacc 0.8110 f1 0.7898 auc 0.9571 (41s)
+ep 008 loss 0.7403 val bacc 0.8064 f1 0.7789 auc 0.9572 (41s)
+ep 009 loss 0.7052 val bacc 0.8045 f1 0.7785 auc 0.9535 (41s)
+ep 010 loss 0.6686 val bacc 0.8223 f1 0.8078 auc 0.9567 (41s)
+ep 011 loss 0.6496 val bacc 0.7985 f1 0.7705 auc 0.9567 (41s)
+ep 012 loss 0.6262 val bacc 0.8019 f1 0.7784 auc 0.9560 (41s)
+ep 013 loss 0.5943 val bacc 0.7950 f1 0.7775 auc 0.9570 (41s)
+ep 014 loss 0.5652 val bacc 0.7911 f1 0.7848 auc 0.9560 (41s)
+ep 015 loss 0.5651 val bacc 0.7946 f1 0.7889 auc 0.9573 (41s)
+ep 016 loss 0.5378 val bacc 0.7899 f1 0.7818 auc 0.9552 (41s)
+ep 017 loss 0.5231 val bacc 0.7835 f1 0.7817 auc 0.9543 (41s)
+ep 018 loss 0.4983 val bacc 0.7800 f1 0.7794 auc 0.9545 (42s)
+ep 019 loss 0.4949 val bacc 0.7846 f1 0.7815 auc 0.9515 (41s)
+ep 020 loss 0.4875 val bacc 0.7768 f1 0.7738 auc 0.9503 (41s)
+ep 021 loss 0.4746 val bacc 0.7790 f1 0.7754 auc 0.9485 (41s)
+ep 022 loss 0.4674 val bacc 0.7808 f1 0.7774 auc 0.9476 (42s)
+ep 023 loss 0.4608 val bacc 0.7778 f1 0.7727 auc 0.9472 (41s)
+ep 024 loss 0.4574 val bacc 0.7765 f1 0.7712 auc 0.9456 (41s)
+ep 025 loss 0.4509 val bacc 0.7752 f1 0.7687 auc 0.9441 (41s)
+ep 026 loss 0.4445 val bacc 0.7737 f1 0.7680 auc 0.9429 (41s)
+ep 027 loss 0.4513 val bacc 0.7768 f1 0.7712 auc 0.9423 (41s)
+ep 028 loss 0.4445 val bacc 0.7776 f1 0.7691 auc 0.9422 (41s)
+ep 029 loss 0.4411 val bacc 0.7787 f1 0.7708 auc 0.9417 (41s)
+ep 030 loss 0.4437 val bacc 0.7799 f1 0.7722 auc 0.9416 (41s)
+VAL: {"balanced_accuracy": 0.7799, "macro_f1": 0.7722, "macro_auc": 0.9416}
+TEST: {"balanced_accuracy": 0.7643, "macro_f1": 0.7612, "macro_auc": 0.9439}
+config=baseline device=cuda train=4411 val=631
+ep 001 loss 1.6648 val bacc 0.5613 f1 0.5053 auc 0.8987 (39s)
+ep 002 loss 1.2039 val bacc 0.7212 f1 0.6654 auc 0.9336 (40s)
+ep 003 loss 1.0950 val bacc 0.7747 f1 0.7167 auc 0.9512 (41s)
+ep 004 loss 0.9723 val bacc 0.7868 f1 0.7556 auc 0.9575 (41s)
+ep 005 loss 0.9168 val bacc 0.7860 f1 0.7551 auc 0.9629 (41s)
+ep 006 loss 0.8334 val bacc 0.7999 f1 0.7697 auc 0.9620 (41s)
+ep 007 loss 0.7814 val bacc 0.7985 f1 0.7798 auc 0.9574 (41s)
+ep 008 loss 0.7400 val bacc 0.8061 f1 0.7741 auc 0.9545 (41s)
+ep 009 loss 0.7034 val bacc 0.8003 f1 0.7666 auc 0.9584 (41s)
+ep 010 loss 0.6706 val bacc 0.8027 f1 0.7759 auc 0.9552 (41s)
+ep 011 loss 0.6520 val bacc 0.7946 f1 0.7827 auc 0.9563 (41s)
+ep 012 loss 0.6134 val bacc 0.8108 f1 0.7961 auc 0.9564 (41s)
+ep 013 loss 0.5874 val bacc 0.7920 f1 0.7696 auc 0.9568 (41s)
+ep 014 loss 0.5802 val bacc 0.8000 f1 0.7832 auc 0.9534 (41s)
+ep 015 loss 0.5429 val bacc 0.7861 f1 0.7762 auc 0.9527 (41s)
+ep 016 loss 0.5340 val bacc 0.7725 f1 0.7590 auc 0.9526 (40s)
+ep 017 loss 0.5211 val bacc 0.7770 f1 0.7636 auc 0.9527 (41s)
+ep 018 loss 0.5024 val bacc 0.7876 f1 0.7725 auc 0.9522 (41s)
+ep 019 loss 0.4848 val bacc 0.7952 f1 0.7770 auc 0.9508 (41s)
+ep 020 loss 0.4777 val bacc 0.7908 f1 0.7738 auc 0.9511 (41s)
+ep 021 loss 0.4662 val bacc 0.7964 f1 0.7783 auc 0.9495 (41s)
+ep 022 loss 0.4617 val bacc 0.7990 f1 0.7820 auc 0.9485 (41s)
+ep 023 loss 0.4527 val bacc 0.7903 f1 0.7771 auc 0.9473 (41s)
+ep 024 loss 0.4526 val bacc 0.7987 f1 0.7904 auc 0.9465 (41s)
+ep 025 loss 0.4475 val bacc 0.7960 f1 0.7870 auc 0.9464 (41s)
+ep 026 loss 0.4437 val bacc 0.7797 f1 0.7740 auc 0.9459 (41s)
+ep 027 loss 0.4414 val bacc 0.7802 f1 0.7804 auc 0.9457 (41s)
+ep 028 loss 0.4419 val bacc 0.7797 f1 0.7796 auc 0.9455 (40s)
+ep 029 loss 0.4406 val bacc 0.7788 f1 0.7736 auc 0.9449 (41s)
+ep 030 loss 0.4441 val bacc 0.7792 f1 0.7791 auc 0.9445 (41s)
+VAL: {"balanced_accuracy": 0.7792, "macro_f1": 0.7791, "macro_auc": 0.9445}
+TEST: {"balanced_accuracy": 0.7533, "macro_f1": 0.7424, "macro_auc": 0.9267}
+fold 0: 14885 OOD predictions -> runs_ood_pf/ham_nofollow_f0
+fold 1: 14885 OOD predictions -> runs_ood_pf/ham_nofollow_f1
+fold 2: 14885 OOD predictions -> runs_ood_pf/ham_nofollow_f2
+fold 3: 14885 OOD predictions -> runs_ood_pf/ham_nofollow_f3
+fold 4: 14885 OOD predictions -> runs_ood_pf/ham_nofollow_f4
+fold 0: 983 OOD predictions -> runs_ood_d7/ham_nofollow_f0
+fold 1: 983 OOD predictions -> runs_ood_d7/ham_nofollow_f1
+fold 2: 983 OOD predictions -> runs_ood_d7/ham_nofollow_f2
+fold 3: 983 OOD predictions -> runs_ood_d7/ham_nofollow_f3
+fold 4: 983 OOD predictions -> runs_ood_d7/ham_nofollow_f4
+STEP DONE: nofollow_all.txt

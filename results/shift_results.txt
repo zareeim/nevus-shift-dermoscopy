@@ -1,0 +1,92 @@
+in-distribution (HAM10000, 5-fold out-of-fold): 10015 images | OOD (ISIC 2019 non-HAM): 14885 images
+
+== 1. class distribution ==
+       train_prior_%  model_effective_prior_%  OOD_true_%  OOD_predicted_%
+akiec            3.3                      6.0         5.0              5.3
+bcc              5.1                      7.0        18.9             11.6
+bkl             11.0                      9.7        10.2             10.1
+df               1.2                      5.2         0.8              0.9
+mel             11.1                      9.8        22.9             10.6
+nv              66.9                     57.2        41.5             60.8
+vasc             1.4                      5.2         0.7              0.7
+total-variation distance train vs OOD prior: 0.272
+
+== 2. per-class recall and one-vs-rest AUC ==
+       IND_n  IND_recall  IND_AUC  OOD_n  OOD_recall  OOD_AUC  recall_drop  AUC_drop
+class                                                                               
+akiec    327       0.728    0.916    737       0.246    0.769        0.482     0.148
+bcc      514       0.842    0.978   2809       0.501    0.906        0.342     0.072
+bkl     1099       0.692    0.936   1525       0.380    0.769        0.312     0.167
+df       115       0.635    0.936    124       0.202    0.849        0.433     0.087
+mel     1113       0.566    0.897   3409       0.349    0.813        0.217     0.084
+nv      6705       0.951    0.945   6170       0.935    0.881        0.016     0.064
+vasc     142       0.852    0.963    111       0.432    0.937        0.420     0.027
+mean recall drop 0.317 | mean AUC drop 0.093
+(large recall drop with small AUC drop -> decision rule / prior problem; large AUC drop -> features do not transfer)
+
+== 3. OOD confusion matrix, row-normalised (rows = true, columns = predicted) ==
+       akiec   bcc   bkl    df   mel    nv  vasc
+akiec   0.25  0.08  0.34  0.03  0.06  0.26  0.00
+bcc     0.13  0.50  0.10  0.01  0.03  0.22  0.00
+bkl     0.08  0.06  0.38  0.01  0.06  0.41  0.01
+df      0.04  0.04  0.05  0.20  0.01  0.65  0.02
+mel     0.03  0.03  0.08  0.00  0.35  0.50  0.00
+nv      0.00  0.01  0.02  0.00  0.03  0.93  0.00
+vasc    0.00  0.09  0.01  0.00  0.01  0.46  0.43
+
+== 4. decision-rule corrections on OOD ==
+                                         bacc  macroF1     acc
+rule                                                          
+raw (as trained)                       0.4348   0.4467  0.6178
+balanced rule p/prior_src (no labels)  0.5416   0.4273  0.5678
+EM-estimated OOD prior (no labels)     0.2774   0.2024  0.1422
+ORACLE true OOD prior (upper bound)    0.4249   0.4538  0.6499
+EM prior estimate vs true OOD prior (%):
+         EM  true
+akiec   7.5   5.0
+bcc    15.6  18.9
+bkl     2.7  10.2
+df     65.1   0.8
+mel     8.0  22.9
+nv      0.0  41.5
+vasc    1.1   0.7
+in-distribution reference: bacc 0.7522, macroF1 0.7639, acc 0.8618 | balanced rule: bacc 0.7817, macroF1 0.6840, acc 0.8234
+
+== 5. OOD performance by subgroup (groups with >= 150 images) ==
+     size     n  bacc   acc   %mel    %nv
+1024x1024 11983 0.439 0.591 23.850 35.100
+ 1024x680  1121 0.460 0.646 20.428 58.787
+ 1024x768   774 0.406 0.784 22.610 77.261
+ 1024x682   173 0.812 0.960  5.780 89.595
+ 1024x685   156 0.461 0.660 10.256 64.103
+
+ downsampled     n  bacc   acc   %mel    %nv
+       False 12811 0.438 0.603 23.691 37.889
+        True  2074 0.516 0.710 18.033 63.452
+
+anatom_site_general    n  bacc   acc   %mel    %nv
+     anterior torso 5157 0.438 0.687 22.300 48.284
+          head/neck 3157 0.533 0.461 20.843 14.412
+                NaN 2265 0.344 0.702 17.351 61.369
+    lower extremity 2212 0.394 0.612 23.373 42.812
+    upper extremity 1384 0.525 0.586 30.708 34.393
+        palms/soles  371 0.321 0.501 53.369 42.318
+    posterior torso  274 0.606 0.836 16.788 83.212
+
+age_group    n  bacc   acc   %mel    %nv
+    60-74 3254 0.470 0.491 27.966 16.165
+    45-59 3171 0.448 0.576 26.522 33.743
+    30-44 3032 0.388 0.720 20.317 61.577
+      NaN 2257 0.340 0.709 18.077 64.023
+      75+ 1752 0.435 0.478 30.251  6.507
+      <30 1419 0.351 0.811  7.329 80.902
+
+   sex    n  bacc   acc   %mel    %nv
+  male 6576 0.465 0.595 23.692 33.820
+female 6078 0.409 0.609 23.741 41.576
+   NaN 2231 0.340 0.707 18.288 63.604
+
+== 6. confidence ==
+IND: mean max-probability 0.804 | ECE 0.075
+OOD: mean max-probability 0.666 | ECE 0.050
+DONE

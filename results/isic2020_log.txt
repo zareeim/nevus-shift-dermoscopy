@@ -1,0 +1,32 @@
+official duplicate list: 425 pairs; dropping 425 images
+diagnosis -> class:
+diagnosis
+atypical melanocytic proliferation    EXCLUDED
+cafe-au-lait macule                   EXCLUDED
+lentigo NOS                                bkl
+lichenoid keratosis                        bkl
+melanoma                                   mel
+nevus                                       nv
+seborrheic keratosis                       bkl
+solar lentigo                              bkl
+unknown                               EXCLUDED
+15316 cached, 5993 to fetch
+  0/5993
+  500/5993
+  1000/5993
+  1500/5993
+  2000/5993
+  2500/5993
+  3000/5993
+  3500/5993
+  4000/5993
+  4500/5993
+  5000/5993
+  5500/5993
+example record: {"public": true, "isic_id": "ISIC_0052212", "copyright_license": "CC-BY-NC", "attribution": "ViDIR Group, Department of Dermatology, Medical University of Vienna", "files": {"full": {"url": "https://isic-archive.s3.amazonaws.com/images/ISIC_0052212.jpg", "size": 138515}, "thumbnail_256": {"url": "https://isic-archive.s3.amazonaws.com/thumbnails/ISIC_0052212_thumbnail.jpg", "size": 3393}}, "metadata": {"acquisition": {"pixels_x": 1872, "pixels_y": 1053, "image_type": "dermoscopic", "dermoscopic_type": "contact polarized"}, "clinical": {"concomitant_biopsy": false, "sex": "female", "anatom_site_1": "Lower extremity", "diagnosis_1": "Benign", "diagnosis_2": "Benign melanocytic proliferations", "diagnosis_3": "Nevus", "diagnosis_confirm_type": "serial imaging showing no change", "melanocytic": true, "acquisition_day": 366, "age_approx": 50, "lesion_id": "IL_9087444", "patient_id": "IP_2842074"}}}
+
+kept 5993 images, 1222 patients, 5993 lesions; 0 not downloadable
+label
+nv     86.6
+mel     9.7
+bkl     3.7

@@ -1,0 +1,9 @@
+nohup: ignoring input
+HAM10000 vs ISIC2019 non-HAM: 306 hash candidates
+HAM10000 vs Derm7pt: 0 hash candidates
+ISIC2019 non-HAM vs Derm7pt: 1 hash candidates
+
+confirmed near-duplicates (hash <= 20/256 bits AND mean colour difference < 6/255):
+none
+12 closest candidates -> dup_examples2.jpg, thumb_mae: [10.15, 13.44, 15.56, 15.83, 15.84, 16.16, 16.21, 16.26, 16.43, 16.52, 16.53, 16.64]
+DONE

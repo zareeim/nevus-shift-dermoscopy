@@ -1,0 +1,37 @@
+Safety analysis | bcn_baseline | OOD n=983 | 5-fold ensemble | 95% lesion-cluster bootstrap (1000)
+
+== 1. all OOD images ==
+         metric  raw_%       raw_CI  simple_%    simple_CI  diff_pts       diff_CI     p
+mel_sensitivity 46.371 [40.2, 52.5]    45.968 [39.7, 51.8]    -0.403   [-3.8, 3.1] 0.892
+      mel_to_nv 37.500 [31.7, 43.6]    25.000 [19.2, 30.5]   -12.500 [-16.7, -8.4] 0.000
+      nv_recall 86.261 [83.4, 89.1]    76.870 [73.2, 80.1]    -9.391 [-11.9, -7.1] 0.000
+   balanced_acc 47.243 [42.0, 52.5]    53.186 [47.5, 58.9]     5.943   [2.0, 10.4] 0.002
+per-class recall:
+        akiec    bcc    bkl    df    mel     nv   vasc
+raw       NaN  0.548  0.435  0.25  0.464  0.863  0.276
+simple    NaN  0.524  0.522  0.40  0.460  0.769  0.517
+
+== 2. where do true nevi go? (% of all nevi) ==
+        pred akiec  pred bcc  pred bkl  pred df  pred mel  pred nv  pred vasc
+raw            1.2       0.7       5.7      0.2       5.7     86.3        0.2
+simple         2.6       0.2      12.2      1.0       6.4     76.9        0.7
+
+== 3. per source proxy ==
+-- other (n=983, melanomas=248, nevi=575)
+         metric  raw_%       raw_CI  simple_%    simple_CI  diff_pts       diff_CI     p
+mel_sensitivity 46.371 [40.2, 52.5]    45.968 [39.7, 51.8]    -0.403   [-3.8, 3.1] 0.892
+      mel_to_nv 37.500 [31.7, 43.6]    25.000 [19.2, 30.5]   -12.500 [-16.7, -8.4] 0.000
+      nv_recall 86.261 [83.4, 89.1]    76.870 [73.2, 80.1]    -9.391 [-11.9, -7.1] 0.000
+   balanced_acc 47.243 [42.0, 52.5]    53.186 [47.5, 58.9]     5.943   [2.0, 10.4] 0.002
+
+== 4. per source: P(yhat=nv | y) and BBSE nevus-prior error decomposition (raw predictions) ==
+P(yhat=nv | true class):
+                         akiec    bcc    bkl     df    mel     nv   vasc
+set                                                                     
+source (own test folds)  0.041  0.043  0.177  0.306  0.230  0.778  0.207
+other                    0.000  0.071  0.333  0.500  0.375  0.863  0.483
+contribution of each true class to the BBSE nevus-prior error (percentage points):
+        akiec   bcc   bkl    df   mel    nv  vasc  TOTAL nv error
+source                                                           
+other    -0.0 -0.42  1.74  0.54  6.31  8.82   1.5           18.49
+DONE

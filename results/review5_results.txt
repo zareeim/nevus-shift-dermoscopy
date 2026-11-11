@@ -1,0 +1,606 @@
+
+######## TARGET ISIC2019 ########
+
+-- A6 ResNet-50 | ISIC2019: P(yhat=row | y=col), mean over 15 models; SOURCE, TARGET, TARGET-SOURCE (points)
+source:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   73.4   3.1   6.6   4.1   1.8   0.3   0.0
+pred bcc      8.1  84.4   2.2   5.2   1.9   0.5   1.4
+pred bkl     10.7   3.2  70.2   2.3   5.4   1.1   0.7
+pred df       0.5   0.9   0.4  65.2   0.2   0.1   1.2
+pred mel      2.4   1.8   7.2   8.7  56.5   3.0   5.3
+pred nv       4.9   6.0  13.3  14.5  33.4  94.9   6.0
+pred vasc     0.0   0.5   0.2   0.0   0.8   0.1  85.4
+target:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   22.2  11.9   8.1   4.7   3.3   0.6   0.5
+pred bcc      9.0  46.8   6.2   5.4   3.3   1.6   6.9
+pred bkl     29.9   9.7  35.0   5.0   7.8   2.1   0.8
+pred df       2.8   2.3   1.1  18.9   0.6   0.3   0.7
+pred mel      8.9   5.0   7.0   2.7  34.8   4.3   2.6
+pred nv      27.0  23.6  41.8  61.6  49.8  90.9  43.1
+pred vasc     0.1   0.8   0.8   1.8   0.6   0.3  45.5
+target - source:
+            akiec   bcc   bkl    df   mel   nv  vasc
+pred akiec  -51.2   8.8   1.5   0.6   1.5  0.3   0.5
+pred bcc      0.9 -37.6   4.0   0.2   1.3  1.0   5.5
+pred bkl     19.2   6.5 -35.2   2.7   2.5  1.0   0.1
+pred df       2.3   1.4   0.7 -46.3   0.4  0.2  -0.5
+pred mel      6.5   3.2  -0.2  -6.0 -21.8  1.3  -2.7
+pred nv      22.1  17.6  28.5  47.1  16.3 -4.0  37.1
+pred vasc     0.1   0.2   0.6   1.8  -0.2  0.2 -39.9
+
+-- A6 EfficientNet-B3 | ISIC2019: P(yhat=row | y=col), mean over 15 models; SOURCE, TARGET, TARGET-SOURCE (points)
+source:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   72.1   2.9   6.3   4.6   1.6   0.3   0.0
+pred bcc      6.4  85.1   2.6   4.1   1.9   0.4   2.8
+pred bkl     12.1   3.4  69.5   4.6   5.2   1.0   0.2
+pred df       1.5   0.8   0.4  73.9   0.4   0.1   0.7
+pred mel      2.9   1.9   7.2   4.9  57.2   2.6   3.9
+pred nv       5.0   5.4  13.7   7.8  33.1  95.5   3.5
+pred vasc     0.0   0.5   0.3   0.0   0.7   0.1  88.9
+target:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   23.9  11.4   8.8   6.6   4.1   0.7   0.3
+pred bcc     10.3  48.2   6.3   5.4   4.2   1.2   7.9
+pred bkl     29.7   6.9  35.5   3.3   7.8   2.1   0.2
+pred df       6.3   5.2   2.4  28.9   1.2   0.8   2.3
+pred mel      5.1   3.7   6.3   3.8  33.1   3.8   1.6
+pred nv      24.0  23.5  39.9  50.8  48.6  91.0  41.9
+pred vasc     0.7   1.0   0.8   1.3   1.0   0.5  45.9
+target - source:
+            akiec   bcc   bkl    df   mel   nv  vasc
+pred akiec  -48.2   8.6   2.6   1.9   2.5  0.5   0.3
+pred bcc      3.9 -36.8   3.7   1.3   2.3  0.8   5.1
+pred bkl     17.6   3.4 -33.9  -1.4   2.6  1.1  -0.0
+pred df       4.8   4.5   2.0 -45.0   0.8  0.6   1.6
+pred mel      2.2   1.7  -0.9  -1.1 -24.1  1.2  -2.4
+pred nv      19.0  18.1  26.2  43.0  15.5 -4.5  38.4
+pred vasc     0.7   0.6   0.5   1.3   0.3  0.3 -43.0
+
+-- A6 ConvNeXt-T | ISIC2019: P(yhat=row | y=col), mean over 15 models; SOURCE, TARGET, TARGET-SOURCE (points)
+source:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   70.1   2.7   4.9   5.8   1.5   0.2   0.0
+pred bcc      7.5  86.5   2.7   3.5   1.8   0.4   1.2
+pred bkl     13.5   2.4  71.5   4.1   4.9   1.2   0.5
+pred df       0.8   0.9   0.3  68.4   0.1   0.1   0.5
+pred mel      4.0   1.9   6.9   8.1  55.5   2.9   6.2
+pred nv       3.9   5.1  13.3  10.1  35.5  95.1   5.6
+pred vasc     0.1   0.5   0.3   0.0   0.7   0.1  86.1
+target:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   20.6   9.5   6.7   5.7   2.8   0.6   0.2
+pred bcc     12.4  53.7   6.8   5.6   3.8   1.7   8.1
+pred bkl     27.9   7.0  37.5   5.1   7.3   2.4   0.5
+pred df       2.6   2.5   1.2  21.2   0.7   0.3   1.9
+pred mel      7.2   4.3   7.0   4.4  36.2   4.2   5.7
+pred nv      29.0  22.0  40.0  56.4  48.6  90.4  39.9
+pred vasc     0.3   1.0   0.7   1.7   0.5   0.4  43.6
+target - source:
+            akiec   bcc   bkl    df   mel   nv  vasc
+pred akiec  -49.5   6.8   1.8  -0.1   1.3  0.5   0.2
+pred bcc      4.9 -32.7   4.1   2.1   2.0  1.2   7.0
+pred bkl     14.4   4.6 -34.1   1.0   2.3  1.2   0.0
+pred df       1.8   1.6   0.9 -47.2   0.6  0.2   1.4
+pred mel      3.2   2.4   0.2  -3.8 -19.2  1.4  -0.5
+pred nv      25.1  16.9  26.8  46.3  13.1 -4.8  34.4
+pred vasc     0.2   0.4   0.4   1.7  -0.1  0.3 -42.5
+
+-- A6 Swin-T | ISIC2019: P(yhat=row | y=col), mean over 15 models; SOURCE, TARGET, TARGET-SOURCE (points)
+source:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   73.6   2.5   5.1   3.5   1.3   0.3   0.0
+pred bcc      7.7  88.3   2.3   6.1   1.6   0.5   1.8
+pred bkl     10.3   2.5  73.0   2.6   4.6   1.1   0.0
+pred df       0.7   0.5   0.3  70.7   0.2   0.1   0.5
+pred mel      4.1   1.4   7.5   7.2  61.4   3.4   4.4
+pred nv       3.6   4.5  11.5   9.9  30.2  94.6   5.6
+pred vasc     0.0   0.3   0.2   0.0   0.7   0.1  87.7
+target:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   24.6  10.9   9.0   6.5   3.7   0.6   0.1
+pred bcc     11.6  54.9   7.2   5.2   3.8   1.7   9.8
+pred bkl     25.4   6.9  33.9   4.6   6.7   1.9   0.7
+pred df       3.2   1.9   1.0  20.5   0.6   0.3   1.5
+pred mel      5.7   3.9   6.2   4.3  35.8   4.2   3.5
+pred nv      28.9  20.5  41.8  57.0  48.9  90.8  39.9
+pred vasc     0.5   1.1   0.8   2.0   0.5   0.6  44.6
+target - source:
+            akiec   bcc   bkl    df   mel   nv  vasc
+pred akiec  -49.0   8.4   3.9   3.0   2.3  0.3   0.1
+pred bcc      3.9 -33.4   4.9  -0.9   2.2  1.2   8.0
+pred bkl     15.1   4.4 -39.1   2.0   2.0  0.8   0.7
+pred df       2.5   1.5   0.7 -50.2   0.4  0.2   1.0
+pred mel      1.6   2.5  -1.3  -2.9 -25.5  0.8  -0.9
+pred nv      25.3  16.0  30.3  47.1  18.7 -3.8  34.4
+pred vasc     0.5   0.8   0.6   2.0  -0.2  0.5 -43.2
+
+== A1 melanoma detection, per fold model (no ensemble) | ISIC2019 ==
+arch                                    ResNet-50    EfficientNet-B3         ConvNeXt-T             Swin-T
+ROC-AUC source                  90.1 [87.8, 92.0]  90.2 [87.7, 92.5]  87.9 [84.7, 91.2]  91.3 [88.8, 93.2]
+ROC-AUC target                  77.2 [75.2, 80.1]  77.0 [74.8, 79.1]  75.4 [73.3, 77.7]  77.4 [74.9, 80.3]
+80%-val threshold: sens source  86.9 [83.0, 90.1]  86.7 [80.2, 91.9]  85.9 [81.2, 92.3]  89.9 [83.9, 95.0]
+80%-val threshold: spec source  80.5 [77.7, 82.9]  79.9 [76.4, 83.2]  79.6 [76.5, 84.5]  80.1 [77.1, 83.4]
+80%-val threshold: sens target  73.5 [67.6, 80.6]  71.4 [63.2, 77.6]  68.4 [64.8, 77.9]  69.9 [58.6, 77.4]
+80%-val threshold: spec target  65.6 [56.9, 73.4]  68.4 [63.1, 76.6]  68.9 [58.7, 75.3]  70.1 [62.3, 82.4]
+90%-val threshold: sens source  75.7 [68.9, 82.1]  77.4 [65.8, 85.7]  74.9 [65.3, 82.1]  79.3 [69.4, 87.0]
+90%-val threshold: spec source  90.1 [87.6, 93.2]  90.5 [88.4, 92.8]  89.7 [87.0, 93.0]  89.7 [86.7, 93.3]
+90%-val threshold: sens target  56.4 [48.9, 67.0]  56.1 [47.0, 65.5]  56.6 [51.8, 62.4]  55.1 [45.3, 63.2]
+90%-val threshold: spec target  83.5 [75.4, 88.8]  85.3 [80.5, 89.9]  83.0 [77.6, 87.5]  85.9 [81.1, 92.2]
+
+== A2 balanced accuracy over the target's classes | ISIC2019 ==
+arch                               ResNet-50    EfficientNet-B3         ConvNeXt-T             Swin-T
+source BA, 7 classes       75.7 [69.7, 80.3]  77.4 [74.5, 79.5]  76.2 [69.8, 80.8]  78.5 [73.1, 83.0]
+source BA, target classes  75.7 [69.7, 80.3]  77.4 [74.5, 79.5]  76.2 [69.8, 80.8]  78.5 [73.1, 83.0]
+target BA                  42.0 [39.9, 44.7]  43.8 [41.8, 46.1]  43.3 [40.9, 45.1]  43.6 [41.3, 46.0]
+drop (same classes)        33.7 [29.6, 36.9]  33.7 [30.3, 37.5]  32.9 [27.9, 35.9]  34.9 [31.9, 39.8]
+
+== A6 nevus-ward rates, akiec sensitivity, macro average, nevus errors | ISIC2019 ==
+arch                                       ResNet-50    EfficientNet-B3         ConvNeXt-T             Swin-T
+other->nv pooled source             10.0 [7.1, 12.5]    9.5 [7.3, 13.0]    9.3 [6.3, 12.3]    8.2 [5.7, 11.4]
+other->nv pooled, no akiec source   10.8 [8.0, 13.4]   10.3 [6.7, 13.9]   10.3 [6.1, 13.4]    9.1 [5.6, 12.3]
+other->nv macro source               9.0 [5.6, 13.1]     7.1 [5.3, 9.0]    7.6 [4.6, 12.9]    7.0 [4.6, 10.2]
+nv->mel source                        3.0 [2.1, 4.3]     2.6 [1.8, 3.5]     2.9 [1.9, 4.0]     3.4 [2.7, 4.4]
+nv->any other class source            5.1 [3.9, 6.7]     4.5 [3.7, 6.3]     4.9 [3.5, 6.6]     5.4 [4.3, 7.0]
+other->nv pooled target            30.6 [23.8, 37.3]  29.3 [25.2, 35.1]  29.3 [23.4, 35.8]  29.0 [23.9, 34.1]
+other->nv pooled, no akiec target  31.2 [24.8, 37.1]  30.2 [26.1, 35.4]  29.4 [23.9, 34.8]  29.1 [24.1, 33.8]
+other->nv macro target             39.4 [32.4, 45.4]  36.0 [29.2, 40.6]  37.5 [30.7, 44.0]  37.6 [33.7, 43.4]
+nv->mel target                        4.3 [3.3, 5.6]     3.8 [2.7, 4.8]     4.2 [3.1, 5.9]     4.2 [2.8, 5.2]
+nv->any other class target           9.1 [7.8, 11.6]    9.0 [7.4, 10.7]    9.6 [7.6, 11.8]    9.2 [7.6, 11.0]
+
+== A7 calibration and error detection per fold model (points / %) | ISIC2019 ==
+arch                                                     ResNet-50    EfficientNet-B3         ConvNeXt-T             Swin-T
+ECE top-label source                                8.1 [7.1, 9.0]     8.9 [7.9, 9.9]   10.8 [9.7, 11.8]   10.7 [9.0, 12.6]
+signed (conf - acc) source                       -5.8 [-7.8, -4.2]  -5.5 [-6.4, -3.9]   -2.5 [-4.5, 0.0]  -4.2 [-5.4, -3.3]
+ECE melanoma one-vs-rest source                     3.4 [2.5, 4.4]     3.7 [2.6, 4.3]     5.1 [3.2, 6.3]     4.2 [2.8, 4.9]
+AUROC error detection | pred nv (1-p_nv) source  77.0 [69.9, 82.2]  78.9 [76.7, 80.9]  71.9 [66.6, 79.1]  76.6 [71.8, 82.1]
+AUROC mel vs true nv | pred nv source            74.8 [64.4, 83.0]  75.4 [70.8, 80.2]  69.1 [61.1, 78.1]  74.6 [69.6, 79.0]
+median p_nv: mel predicted nv source             76.0 [71.6, 80.2]  77.7 [73.5, 79.8]  82.5 [82.0, 83.0]  80.3 [77.7, 81.8]
+median p_nv: true nv predicted nv source         82.8 [82.6, 83.1]  83.1 [82.8, 83.5]  83.2 [83.1, 83.2]  82.9 [82.7, 83.1]
+ECE top-label target                              12.4 [9.9, 15.5]  15.6 [12.6, 17.9]  20.7 [18.4, 22.6]  17.1 [15.6, 19.8]
+signed (conf - acc) target                        12.4 [9.8, 15.5]  15.6 [12.6, 17.9]  20.7 [18.4, 22.6]  17.1 [15.6, 19.8]
+ECE melanoma one-vs-rest target                  12.4 [10.9, 13.5]  13.4 [11.8, 14.9]  14.6 [13.3, 15.5]  13.5 [12.4, 14.9]
+AUROC error detection | pred nv (1-p_nv) target  70.6 [67.1, 74.1]  70.6 [68.7, 72.8]  63.7 [57.9, 68.7]  66.4 [61.1, 70.3]
+AUROC mel vs true nv | pred nv target            65.6 [61.8, 69.8]  65.6 [62.6, 67.9]  60.4 [55.0, 65.4]  61.1 [57.2, 64.3]
+median p_nv: mel predicted nv target             74.0 [71.9, 76.3]  78.5 [76.6, 80.1]  82.6 [82.1, 83.2]  80.9 [79.6, 82.0]
+median p_nv: true nv predicted nv target         80.3 [79.2, 81.5]  81.9 [80.9, 82.4]  83.0 [82.7, 83.3]  82.1 [81.4, 82.5]
+
+######## TARGET Derm7pt ########
+
+-- A6 ResNet-50 | Derm7pt: P(yhat=row | y=col), mean over 15 models; SOURCE, TARGET, TARGET-SOURCE (points)
+source:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   73.4   3.1   6.6   4.1   1.8   0.3   0.0
+pred bcc      8.1  84.4   2.2   5.2   1.9   0.5   1.4
+pred bkl     10.7   3.2  70.2   2.3   5.4   1.1   0.7
+pred df       0.5   0.9   0.4  65.2   0.2   0.1   1.2
+pred mel      2.4   1.8   7.2   8.7  56.5   3.0   5.3
+pred nv       4.9   6.0  13.3  14.5  33.4  94.9   6.0
+pred vasc     0.0   0.5   0.2   0.0   0.8   0.1  85.4
+target:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec    0.0   3.0   2.2   2.7   0.6   0.0   0.9
+pred bcc      0.0  39.5   0.1   2.3   0.7   0.3   3.7
+pred bkl      0.0  14.3  57.6  17.3   8.0   3.6   9.9
+pred df       0.0   1.0   0.5  54.3   0.3   0.2   0.2
+pred mel      0.0  16.5   5.8   1.0  47.4   6.5   7.8
+pred nv       0.0  24.6  33.8  22.3  42.6  89.3  47.8
+pred vasc     0.0   1.1   0.0   0.0   0.3   0.1  29.7
+target - source:
+            akiec   bcc   bkl    df  mel   nv  vasc
+pred akiec  -73.4  -0.1  -4.4  -1.4 -1.2 -0.3   0.9
+pred bcc     -8.1 -44.9  -2.1  -2.9 -1.2 -0.2   2.3
+pred bkl    -10.7  11.1 -12.6  15.0  2.7  2.6   9.2
+pred df      -0.5   0.0   0.1 -10.9  0.1  0.1  -0.9
+pred mel     -2.4  14.7  -1.4  -7.7 -9.1  3.5   2.5
+pred nv      -4.9  18.6  20.5   7.8  9.2 -5.6  41.8
+pred vasc     0.0   0.6  -0.2   0.0 -0.5  0.0 -55.7
+
+-- A6 EfficientNet-B3 | Derm7pt: P(yhat=row | y=col), mean over 15 models; SOURCE, TARGET, TARGET-SOURCE (points)
+source:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   72.1   2.9   6.3   4.6   1.6   0.3   0.0
+pred bcc      6.4  85.1   2.6   4.1   1.9   0.4   2.8
+pred bkl     12.1   3.4  69.5   4.6   5.2   1.0   0.2
+pred df       1.5   0.8   0.4  73.9   0.4   0.1   0.7
+pred mel      2.9   1.9   7.2   4.9  57.2   2.6   3.9
+pred nv       5.0   5.4  13.7   7.8  33.1  95.5   3.5
+pred vasc     0.0   0.5   0.3   0.0   0.7   0.1  88.9
+target:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec    0.0   3.2   1.6   0.3   1.4   0.1   0.5
+pred bcc      0.0  44.1   0.3   3.0   1.1   0.1   3.2
+pred bkl      0.0  15.1  54.6   7.0   5.4   2.8   1.6
+pred df       0.0   0.2   0.6  82.3   0.4   0.3   1.4
+pred mel      0.0  14.3   4.3   0.3  49.8   4.6   6.2
+pred nv       0.0  19.5  38.6   7.0  40.8  91.8  50.3
+pred vasc     0.0   3.7   0.1   0.0   1.2   0.2  36.8
+target - source:
+            akiec   bcc   bkl   df  mel   nv  vasc
+pred akiec  -72.1   0.3  -4.6 -4.3 -0.1 -0.2   0.5
+pred bcc     -6.4 -41.0  -2.3 -1.1 -0.8 -0.3   0.5
+pred bkl    -12.1  11.6 -14.9  2.4  0.2  1.9   1.4
+pred df      -1.5  -0.6   0.2  8.4  0.0  0.2   0.7
+pred mel     -2.9  12.3  -2.9 -4.6 -7.4  2.1   2.3
+pred nv      -5.0  14.1  24.8 -0.8  7.7 -3.7  46.9
+pred vasc     0.0   3.2  -0.2  0.0  0.4  0.1 -52.1
+
+-- A6 ConvNeXt-T | Derm7pt: P(yhat=row | y=col), mean over 15 models; SOURCE, TARGET, TARGET-SOURCE (points)
+source:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   70.1   2.7   4.9   5.8   1.5   0.2   0.0
+pred bcc      7.5  86.5   2.7   3.5   1.8   0.4   1.2
+pred bkl     13.5   2.4  71.5   4.1   4.9   1.2   0.5
+pred df       0.8   0.9   0.3  68.4   0.1   0.1   0.5
+pred mel      4.0   1.9   6.9   8.1  55.5   2.9   6.2
+pred nv       3.9   5.1  13.3  10.1  35.5  95.1   5.6
+pred vasc     0.1   0.5   0.3   0.0   0.7   0.1  86.1
+target:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec    0.0   3.8   0.8   1.0   0.6   0.2   2.1
+pred bcc      0.0  39.5   0.3   1.0   0.5   0.1   5.7
+pred bkl      0.0  11.4  60.4  13.0   7.2   2.7   6.4
+pred df       0.0   0.3   0.5  68.3   0.2   0.3   1.1
+pred mel      0.0  20.3   4.2   2.0  51.9   6.6  10.3
+pred nv       0.0  23.2  33.9  14.7  39.3  89.9  49.2
+pred vasc     0.0   1.4   0.0   0.0   0.3   0.1  25.1
+target - source:
+            akiec   bcc   bkl   df  mel   nv  vasc
+pred akiec  -70.1   1.2  -4.2 -4.8 -0.9 -0.0   2.1
+pred bcc     -7.5 -46.9  -2.4 -2.5 -1.3 -0.3   4.6
+pred bkl    -13.5   9.0 -11.2  8.9  2.2  1.5   6.0
+pred df      -0.8  -0.6   0.2 -0.1  0.0  0.2   0.7
+pred mel     -4.0  18.4  -2.7 -6.1 -3.5  3.8   4.1
+pred nv      -3.9  18.1  20.6  4.5  3.8 -5.2  43.6
+pred vasc    -0.1   0.9  -0.3  0.0 -0.3 -0.0 -61.1
+
+-- A6 Swin-T | Derm7pt: P(yhat=row | y=col), mean over 15 models; SOURCE, TARGET, TARGET-SOURCE (points)
+source:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   73.6   2.5   5.1   3.5   1.3   0.3   0.0
+pred bcc      7.7  88.3   2.3   6.1   1.6   0.5   1.8
+pred bkl     10.3   2.5  73.0   2.6   4.6   1.1   0.0
+pred df       0.7   0.5   0.3  70.7   0.2   0.1   0.5
+pred mel      4.1   1.4   7.5   7.2  61.4   3.4   4.4
+pred nv       3.6   4.5  11.5   9.9  30.2  94.6   5.6
+pred vasc     0.0   0.3   0.2   0.0   0.7   0.1  87.7
+target:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec    0.0   2.2   0.9   0.3   0.7   0.2   0.5
+pred bcc      0.0  46.2   0.2   0.0   0.8   0.1   6.7
+pred bkl      0.0   7.9  53.4  17.7   6.8   2.8   8.0
+pred df       0.0   0.2   0.3  63.7   0.3   0.3   1.4
+pred mel      0.0  19.0   5.6   4.0  53.7   6.7  10.3
+pred nv       0.0  22.5  39.6  14.3  37.3  89.7  45.3
+pred vasc     0.0   1.9   0.0   0.0   0.4   0.1  27.8
+target - source:
+            akiec   bcc   bkl    df  mel   nv  vasc
+pred akiec  -73.6  -0.3  -4.2  -3.1 -0.6 -0.1   0.5
+pred bcc     -7.7 -42.1  -2.1  -6.1 -0.8 -0.4   4.8
+pred bkl    -10.3   5.5 -19.6  15.1  2.2  1.8   8.0
+pred df      -0.7  -0.3  -0.0  -7.1  0.1  0.3   0.9
+pred mel     -4.1  17.6  -1.9  -3.2 -7.7  3.3   6.0
+pred nv      -3.6  18.0  28.1   4.5  7.1 -4.9  39.7
+pred vasc     0.0   1.6  -0.2   0.0 -0.3  0.0 -59.9
+
+== A1 melanoma detection, per fold model (no ensemble) | Derm7pt ==
+arch                                    ResNet-50    EfficientNet-B3         ConvNeXt-T             Swin-T
+ROC-AUC source                  90.1 [87.8, 92.0]  90.2 [87.7, 92.5]  87.9 [84.7, 91.2]  91.3 [88.8, 93.2]
+ROC-AUC target                  81.6 [78.6, 84.1]  84.3 [81.6, 86.5]  81.9 [79.6, 83.6]  83.2 [80.3, 85.6]
+80%-val threshold: sens source  86.9 [83.0, 90.1]  86.7 [80.2, 91.9]  85.9 [81.2, 92.3]  89.9 [83.9, 95.0]
+80%-val threshold: spec source  80.5 [77.7, 82.9]  79.9 [76.4, 83.2]  79.6 [76.5, 84.5]  80.1 [77.1, 83.4]
+80%-val threshold: sens target  81.6 [74.6, 88.7]  83.3 [77.0, 86.7]  84.3 [79.0, 87.9]  83.3 [69.8, 89.5]
+80%-val threshold: spec target  64.9 [53.7, 72.0]  68.1 [61.2, 76.7]  58.7 [47.6, 67.1]  65.5 [57.1, 79.0]
+90%-val threshold: sens source  75.7 [68.9, 82.1]  77.4 [65.8, 85.7]  74.9 [65.3, 82.1]  79.3 [69.4, 87.0]
+90%-val threshold: spec source  90.1 [87.6, 93.2]  90.5 [88.4, 92.8]  89.7 [87.0, 93.0]  89.7 [86.7, 93.3]
+90%-val threshold: sens target  70.2 [56.0, 79.8]  72.1 [65.3, 77.4]  74.6 [69.0, 83.1]  73.4 [57.3, 79.0]
+90%-val threshold: spec target  80.2 [70.1, 89.1]  83.5 [78.9, 87.6]  77.6 [68.8, 83.3]  81.0 [76.3, 91.0]
+
+== A2 balanced accuracy over the target's classes | Derm7pt ==
+arch                               ResNet-50    EfficientNet-B3         ConvNeXt-T             Swin-T
+source BA, 7 classes       75.7 [69.7, 80.3]  77.4 [74.5, 79.5]  76.2 [69.8, 80.8]  78.5 [73.1, 83.0]
+source BA, target classes  76.1 [69.6, 80.6]  78.3 [73.8, 81.8]  77.2 [70.1, 82.6]  79.3 [72.7, 85.0]
+target BA                  53.0 [49.6, 58.9]  59.9 [55.1, 63.7]  55.9 [53.3, 59.4]  55.7 [50.5, 62.4]
+drop (same classes)        23.2 [18.4, 28.6]  18.4 [12.2, 23.1]  21.3 [16.3, 26.5]  23.5 [16.5, 30.4]
+
+== A6 nevus-ward rates, akiec sensitivity, macro average, nevus errors | Derm7pt ==
+arch                                       ResNet-50    EfficientNet-B3         ConvNeXt-T             Swin-T
+other->nv pooled source             10.8 [8.0, 13.4]   10.3 [6.7, 13.9]   10.3 [6.1, 13.4]    9.1 [5.6, 12.3]
+other->nv pooled, no akiec source   10.8 [8.0, 13.4]   10.3 [6.7, 13.9]   10.3 [6.1, 13.4]    9.1 [5.6, 12.3]
+other->nv macro source              10.0 [5.8, 14.5]     7.6 [5.9, 9.8]    8.5 [4.8, 14.6]    7.9 [5.0, 12.4]
+nv->mel source                        3.0 [2.1, 4.3]     2.6 [1.8, 3.5]     2.9 [1.9, 4.0]     3.4 [2.7, 4.4]
+nv->any other class source            5.1 [3.9, 6.7]     4.5 [3.7, 6.3]     4.9 [3.5, 6.6]     5.4 [4.3, 7.0]
+other->nv pooled target            32.5 [28.1, 38.8]  31.8 [26.9, 36.2]  31.5 [26.9, 35.6]  33.0 [27.5, 41.2]
+other->nv pooled, no akiec target  32.5 [28.1, 38.8]  31.8 [26.9, 36.2]  31.5 [26.9, 35.6]  33.0 [27.5, 41.2]
+other->nv macro target             32.1 [25.9, 40.4]  28.9 [24.1, 35.0]  30.2 [26.1, 34.9]  30.4 [24.5, 39.0]
+nv->mel target                        6.5 [3.8, 9.6]     4.6 [3.1, 7.0]     6.6 [4.2, 9.4]     6.7 [4.2, 9.0]
+nv->any other class target          10.7 [7.5, 14.8]    8.2 [5.9, 11.1]   10.1 [7.1, 12.7]   10.3 [7.1, 12.9]
+
+== A7 calibration and error detection per fold model (points / %) | Derm7pt ==
+arch                                                     ResNet-50    EfficientNet-B3         ConvNeXt-T             Swin-T
+ECE top-label source                                8.1 [7.1, 9.0]     8.9 [7.9, 9.9]   10.8 [9.7, 11.8]   10.7 [9.0, 12.6]
+signed (conf - acc) source                       -5.8 [-7.8, -4.2]  -5.5 [-6.4, -3.9]   -2.5 [-4.5, 0.0]  -4.2 [-5.4, -3.3]
+ECE melanoma one-vs-rest source                     3.4 [2.5, 4.4]     3.7 [2.6, 4.3]     5.1 [3.2, 6.3]     4.2 [2.8, 4.9]
+AUROC error detection | pred nv (1-p_nv) source  77.0 [69.9, 82.2]  78.9 [76.7, 80.9]  71.9 [66.6, 79.1]  76.6 [71.8, 82.1]
+AUROC mel vs true nv | pred nv source            74.8 [64.4, 83.0]  75.4 [70.8, 80.2]  69.1 [61.1, 78.1]  74.6 [69.6, 79.0]
+median p_nv: mel predicted nv source             76.0 [71.6, 80.2]  77.7 [73.5, 79.8]  82.5 [82.0, 83.0]  80.3 [77.7, 81.8]
+median p_nv: true nv predicted nv source         82.8 [82.6, 83.1]  83.1 [82.8, 83.5]  83.2 [83.1, 83.2]  82.9 [82.7, 83.1]
+ECE top-label target                                5.0 [3.3, 8.2]     5.9 [3.8, 8.2]    8.6 [6.8, 10.7]    7.2 [5.5, 10.0]
+signed (conf - acc) target                          2.8 [0.4, 4.8]     3.1 [1.6, 5.8]    8.2 [5.9, 10.7]     5.8 [2.9, 7.8]
+ECE melanoma one-vs-rest target                   11.4 [8.7, 13.9]   10.9 [8.6, 13.2]  13.0 [11.9, 15.0]   11.9 [9.7, 13.7]
+AUROC error detection | pred nv (1-p_nv) target  69.0 [65.4, 71.3]  72.2 [66.0, 77.1]  63.0 [55.2, 66.7]  65.3 [59.8, 71.5]
+AUROC mel vs true nv | pred nv target            69.7 [68.0, 73.4]  71.3 [65.5, 76.6]  63.3 [56.9, 68.1]  65.4 [59.1, 71.9]
+median p_nv: mel predicted nv target             73.0 [67.1, 78.6]  77.6 [74.9, 80.0]  82.2 [80.4, 83.0]  80.1 [76.5, 81.7]
+median p_nv: true nv predicted nv target         82.1 [80.5, 83.8]  82.7 [81.7, 83.4]  83.1 [82.8, 83.3]  82.4 [82.0, 82.8]
+
+######## TARGET ISIC2020 ########
+
+-- A6 ResNet-50 | ISIC2020: P(yhat=row | y=col), mean over 15 models; SOURCE, TARGET, TARGET-SOURCE (points)
+source:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   73.4   3.1   6.6   4.1   1.8   0.3   0.0
+pred bcc      8.1  84.4   2.2   5.2   1.9   0.5   1.4
+pred bkl     10.7   3.2  70.2   2.3   5.4   1.1   0.7
+pred df       0.5   0.9   0.4  65.2   0.2   0.1   1.2
+pred mel      2.4   1.8   7.2   8.7  56.5   3.0   5.3
+pred nv       4.9   6.0  13.3  14.5  33.4  94.9   6.0
+pred vasc     0.0   0.5   0.2   0.0   0.8   0.1  85.4
+target:
+            akiec  bcc   bkl   df   mel    nv  vasc
+pred akiec    0.0  0.0   9.1  0.0   3.2   0.1   0.0
+pred bcc      0.0  0.0  12.2  0.0   2.8   0.3   0.0
+pred bkl      0.0  0.0  28.0  0.0   6.0   0.6   0.0
+pred df       0.0  0.0   2.1  0.0   1.1   0.1   0.0
+pred mel      0.0  0.0   1.3  0.0  13.5   0.5   0.0
+pred nv       0.0  0.0  46.0  0.0  72.6  98.2   0.0
+pred vasc     0.0  0.0   1.3  0.0   0.7   0.2   0.0
+target - source:
+            akiec   bcc   bkl    df   mel   nv  vasc
+pred akiec  -73.4  -3.1   2.5  -4.1   1.4 -0.2   0.0
+pred bcc     -8.1 -84.4  10.0  -5.2   0.9 -0.2  -1.4
+pred bkl    -10.7  -3.2 -42.2  -2.3   0.7 -0.5  -0.7
+pred df      -0.5  -0.9   1.7 -65.2   0.9  0.0  -1.2
+pred mel     -2.4  -1.8  -5.9  -8.7 -43.0 -2.5  -5.3
+pred nv      -4.9  -6.0  32.7 -14.5  39.2  3.3  -6.0
+pred vasc     0.0  -0.5   1.1   0.0  -0.1  0.1 -85.4
+
+-- A6 EfficientNet-B3 | ISIC2020: P(yhat=row | y=col), mean over 15 models; SOURCE, TARGET, TARGET-SOURCE (points)
+source:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   72.1   2.9   6.3   4.6   1.6   0.3   0.0
+pred bcc      6.4  85.1   2.6   4.1   1.9   0.4   2.8
+pred bkl     12.1   3.4  69.5   4.6   5.2   1.0   0.2
+pred df       1.5   0.8   0.4  73.9   0.4   0.1   0.7
+pred mel      2.9   1.9   7.2   4.9  57.2   2.6   3.9
+pred nv       5.0   5.4  13.7   7.8  33.1  95.5   3.5
+pred vasc     0.0   0.5   0.3   0.0   0.7   0.1  88.9
+target:
+            akiec  bcc   bkl   df   mel    nv  vasc
+pred akiec    0.0  0.0  12.3  0.0   5.0   0.1   0.0
+pred bcc      0.0  0.0  10.6  0.0   2.0   0.3   0.0
+pred bkl      0.0  0.0  30.5  0.0   6.1   0.5   0.0
+pred df       0.0  0.0   2.7  0.0   1.9   0.3   0.0
+pred mel      0.0  0.0   1.3  0.0  16.1   0.5   0.0
+pred nv       0.0  0.0  40.8  0.0  68.2  98.0   0.0
+pred vasc     0.0  0.0   1.9  0.0   0.7   0.3   0.0
+target - source:
+            akiec   bcc   bkl    df   mel   nv  vasc
+pred akiec  -72.1  -2.9   6.1  -4.6   3.4 -0.1   0.0
+pred bcc     -6.4 -85.1   7.9  -4.1   0.1 -0.2  -2.8
+pred bkl    -12.1  -3.4 -39.0  -4.6   1.0 -0.4  -0.2
+pred df      -1.5  -0.8   2.3 -73.9   1.6  0.1  -0.7
+pred mel     -2.9  -1.9  -5.9  -4.9 -41.1 -2.0  -3.9
+pred nv      -5.0  -5.4  27.0  -7.8  35.1  2.5  -3.5
+pred vasc     0.0  -0.5   1.6   0.0  -0.1  0.2 -88.9
+
+-- A6 ConvNeXt-T | ISIC2020: P(yhat=row | y=col), mean over 15 models; SOURCE, TARGET, TARGET-SOURCE (points)
+source:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   70.1   2.7   4.9   5.8   1.5   0.2   0.0
+pred bcc      7.5  86.5   2.7   3.5   1.8   0.4   1.2
+pred bkl     13.5   2.4  71.5   4.1   4.9   1.2   0.5
+pred df       0.8   0.9   0.3  68.4   0.1   0.1   0.5
+pred mel      4.0   1.9   6.9   8.1  55.5   2.9   6.2
+pred nv       3.9   5.1  13.3  10.1  35.5  95.1   5.6
+pred vasc     0.1   0.5   0.3   0.0   0.7   0.1  86.1
+target:
+            akiec  bcc   bkl   df   mel    nv  vasc
+pred akiec    0.0  0.0   9.7  0.0   3.0   0.1   0.0
+pred bcc      0.0  0.0  11.3  0.0   2.9   0.4   0.0
+pred bkl      0.0  0.0  31.5  0.0   6.0   0.5   0.0
+pred df       0.0  0.0   1.8  0.0   1.4   0.1   0.0
+pred mel      0.0  0.0   2.7  0.0  17.1   0.6   0.0
+pred nv       0.0  0.0  41.7  0.0  68.9  98.1   0.0
+pred vasc     0.0  0.0   1.4  0.0   0.8   0.2   0.0
+target - source:
+            akiec   bcc   bkl    df   mel   nv  vasc
+pred akiec  -70.1  -2.7   4.8  -5.8   1.5 -0.1   0.0
+pred bcc     -7.5 -86.5   8.5  -3.5   1.1 -0.0  -1.2
+pred bkl    -13.5  -2.4 -40.1  -4.1   1.1 -0.7  -0.5
+pred df      -0.8  -0.9   1.5 -68.4   1.2  0.0  -0.5
+pred mel     -4.0  -1.9  -4.2  -8.1 -38.4 -2.3  -6.2
+pred nv      -3.9  -5.1  28.4 -10.1  33.3  2.9  -5.6
+pred vasc    -0.1  -0.5   1.0   0.0   0.1  0.1 -86.1
+
+-- A6 Swin-T | ISIC2020: P(yhat=row | y=col), mean over 15 models; SOURCE, TARGET, TARGET-SOURCE (points)
+source:
+            akiec   bcc   bkl    df   mel    nv  vasc
+pred akiec   73.6   2.5   5.1   3.5   1.3   0.3   0.0
+pred bcc      7.7  88.3   2.3   6.1   1.6   0.5   1.8
+pred bkl     10.3   2.5  73.0   2.6   4.6   1.1   0.0
+pred df       0.7   0.5   0.3  70.7   0.2   0.1   0.5
+pred mel      4.1   1.4   7.5   7.2  61.4   3.4   4.4
+pred nv       3.6   4.5  11.5   9.9  30.2  94.6   5.6
+pred vasc     0.0   0.3   0.2   0.0   0.7   0.1  87.7
+target:
+            akiec  bcc   bkl   df   mel    nv  vasc
+pred akiec    0.0  0.0  11.6  0.0   3.6   0.1   0.0
+pred bcc      0.0  0.0  12.2  0.0   3.1   0.4   0.0
+pred bkl      0.0  0.0  27.8  0.0   4.7   0.4   0.0
+pred df       0.0  0.0   2.9  0.0   1.3   0.1   0.0
+pred mel      0.0  0.0   2.1  0.0  15.3   0.5   0.0
+pred nv       0.0  0.0  41.1  0.0  71.2  98.1   0.0
+pred vasc     0.0  0.0   2.1  0.0   0.8   0.3   0.0
+target - source:
+            akiec   bcc   bkl    df   mel   nv  vasc
+pred akiec  -73.6  -2.5   6.5  -3.5   2.3 -0.2   0.0
+pred bcc     -7.7 -88.3   9.9  -6.1   1.5 -0.0  -1.8
+pred bkl    -10.3  -2.5 -45.2  -2.6   0.0 -0.7   0.0
+pred df      -0.7  -0.5   2.6 -70.7   1.0  0.1  -0.5
+pred mel     -4.1  -1.4  -5.4  -7.2 -46.1 -2.9  -4.4
+pred nv      -3.6  -4.5  29.6  -9.9  41.0  3.5  -5.6
+pred vasc     0.0  -0.3   2.0   0.0   0.2  0.2 -87.7
+
+== A1 melanoma detection, per fold model (no ensemble) | ISIC2020 ==
+arch                                    ResNet-50    EfficientNet-B3         ConvNeXt-T             Swin-T
+ROC-AUC source                  90.1 [87.8, 92.0]  90.2 [87.7, 92.5]  87.9 [84.7, 91.2]  91.3 [88.8, 93.2]
+ROC-AUC target                  63.9 [60.3, 67.7]  68.0 [63.0, 72.4]  64.2 [58.9, 71.4]  67.3 [62.3, 71.4]
+80%-val threshold: sens source  86.9 [83.0, 90.1]  86.7 [80.2, 91.9]  85.9 [81.2, 92.3]  89.9 [83.9, 95.0]
+80%-val threshold: spec source  80.5 [77.7, 82.9]  79.9 [76.4, 83.2]  79.6 [76.5, 84.5]  80.1 [77.1, 83.4]
+80%-val threshold: sens target  43.1 [39.8, 47.0]  50.3 [44.9, 53.0]  49.9 [44.4, 56.3]  46.2 [40.4, 53.2]
+80%-val threshold: spec target  91.9 [89.3, 93.8]  87.9 [82.3, 90.6]  89.1 [82.1, 92.5]  92.7 [89.9, 95.5]
+90%-val threshold: sens source  75.7 [68.9, 82.1]  77.4 [65.8, 85.7]  74.9 [65.3, 82.1]  79.3 [69.4, 87.0]
+90%-val threshold: spec source  90.1 [87.6, 93.2]  90.5 [88.4, 92.8]  89.7 [87.0, 93.0]  89.7 [86.7, 93.3]
+90%-val threshold: sens target  28.1 [22.5, 33.2]  34.3 [29.6, 39.9]  34.1 [29.3, 41.7]  28.6 [23.2, 35.5]
+90%-val threshold: spec target  97.8 [96.7, 98.7]  97.0 [95.4, 98.1]  97.0 [95.6, 98.0]  98.0 [97.4, 98.6]
+
+== A2 balanced accuracy over the target's classes | ISIC2020 ==
+arch                               ResNet-50    EfficientNet-B3         ConvNeXt-T             Swin-T
+source BA, 7 classes       75.7 [69.7, 80.3]  77.4 [74.5, 79.5]  76.2 [69.8, 80.8]  78.5 [73.1, 83.0]
+source BA, target classes  73.9 [70.6, 76.3]  74.1 [70.5, 78.7]  74.1 [70.2, 77.9]  76.3 [74.0, 78.9]
+target BA                  46.6 [44.2, 48.9]  48.2 [46.2, 49.6]  48.9 [47.0, 50.4]  47.0 [45.4, 48.8]
+drop (same classes)        27.3 [24.3, 30.9]  25.9 [23.4, 29.6]  25.2 [20.8, 30.2]  29.3 [25.8, 33.5]
+
+== A6 nevus-ward rates, akiec sensitivity, macro average, nevus errors | ISIC2020 ==
+arch                                       ResNet-50    EfficientNet-B3         ConvNeXt-T             Swin-T
+other->nv pooled source             13.3 [9.1, 17.7]   13.7 [8.2, 18.3]   13.3 [7.3, 20.5]   11.5 [6.8, 17.7]
+other->nv pooled, no akiec source   13.3 [9.1, 17.7]   13.7 [8.2, 18.3]   13.3 [7.3, 20.5]   11.5 [6.8, 17.7]
+other->nv macro source              13.3 [9.1, 17.7]   13.7 [8.2, 18.3]   13.3 [7.3, 20.5]   11.5 [6.8, 17.7]
+nv->mel source                        3.0 [2.1, 4.3]     2.6 [1.8, 3.5]     2.9 [1.9, 4.0]     3.4 [2.7, 4.4]
+nv->any other class source            5.1 [3.9, 6.7]     4.5 [3.7, 6.3]     4.9 [3.5, 6.6]     5.4 [4.3, 7.0]
+other->nv pooled target            46.0 [33.9, 55.7]  40.8 [35.3, 45.2]  41.7 [33.0, 50.7]  41.1 [33.9, 46.2]
+other->nv pooled, no akiec target  46.0 [33.9, 55.7]  40.8 [35.3, 45.2]  41.7 [33.0, 50.7]  41.1 [33.9, 46.2]
+other->nv macro target             46.0 [33.9, 55.7]  40.8 [35.3, 45.2]  41.7 [33.0, 50.7]  41.1 [33.9, 46.2]
+nv->mel target                        0.5 [0.3, 0.7]     0.5 [0.3, 0.7]     0.6 [0.4, 0.8]     0.5 [0.3, 0.6]
+nv->any other class target            1.8 [1.2, 2.4]     2.0 [1.7, 2.3]     1.9 [1.4, 2.5]     1.9 [1.6, 2.5]
+
+== A7 calibration and error detection per fold model (points / %) | ISIC2020 ==
+arch                                                     ResNet-50    EfficientNet-B3         ConvNeXt-T             Swin-T
+ECE top-label source                                8.1 [7.1, 9.0]     8.9 [7.9, 9.9]   10.8 [9.7, 11.8]   10.7 [9.0, 12.6]
+signed (conf - acc) source                       -5.8 [-7.8, -4.2]  -5.5 [-6.4, -3.9]   -2.5 [-4.5, 0.0]  -4.2 [-5.4, -3.3]
+ECE melanoma one-vs-rest source                     3.4 [2.5, 4.4]     3.7 [2.6, 4.3]     5.1 [3.2, 6.3]     4.2 [2.8, 4.9]
+AUROC error detection | pred nv (1-p_nv) source  77.0 [69.9, 82.2]  78.9 [76.7, 80.9]  71.9 [66.6, 79.1]  76.6 [71.8, 82.1]
+AUROC mel vs true nv | pred nv source            74.8 [64.4, 83.0]  75.4 [70.8, 80.2]  69.1 [61.1, 78.1]  74.6 [69.6, 79.0]
+median p_nv: mel predicted nv source             76.0 [71.6, 80.2]  77.7 [73.5, 79.8]  82.5 [82.0, 83.0]  80.3 [77.7, 81.8]
+median p_nv: true nv predicted nv source         82.8 [82.6, 83.1]  83.1 [82.8, 83.5]  83.2 [83.1, 83.2]  82.9 [82.7, 83.1]
+ECE top-label target                               9.9 [8.9, 10.9]  10.8 [10.2, 11.4]  11.4 [10.7, 12.5]  11.8 [11.2, 12.7]
+signed (conf - acc) target                       -6.8 [-7.5, -6.0]  -6.6 [-7.3, -6.0]  -5.1 [-5.7, -4.4]  -5.6 [-6.3, -5.0]
+ECE melanoma one-vs-rest target                     6.8 [6.5, 7.0]     6.5 [6.2, 6.8]     6.8 [6.5, 7.1]     6.8 [6.4, 7.1]
+AUROC error detection | pred nv (1-p_nv) target  65.9 [60.8, 75.8]  70.5 [66.8, 74.5]  61.9 [53.9, 68.1]  69.0 [61.8, 74.7]
+AUROC mel vs true nv | pred nv target            64.2 [59.8, 73.7]  68.2 [64.6, 72.5]  61.6 [54.1, 67.3]  67.6 [59.2, 75.0]
+median p_nv: mel predicted nv target             80.6 [78.8, 81.8]  81.2 [79.9, 81.9]  83.0 [82.8, 83.3]  82.2 [81.4, 82.6]
+median p_nv: true nv predicted nv target         83.0 [82.2, 83.5]  83.1 [82.8, 83.4]  83.2 [83.1, 83.3]  83.0 [82.7, 83.2]
+
+######## REVERSE: bcn_baseline -> HAM10000 ########
+per-class recall (%), source test folds vs HAM10000, mean over 5 fold models:
+       source  HAM10000  change
+akiec    40.2      28.1   -12.1
+bcc      83.2      88.0     4.7
+bkl      40.3      36.3    -4.0
+df       22.5      25.7     3.3
+mel      62.4      35.8   -26.6
+nv       77.8      87.0     9.2
+vasc     48.9      77.3    28.4
+TARGET - SOURCE, P(yhat=row | y=col), points:
+            akiec  bcc   bkl   df   mel   nv  vasc
+pred akiec  -12.1 -4.2  -0.8 -1.3   1.0 -0.1   0.0
+pred bcc     -2.3  4.7  -4.1 -2.0  -1.7 -2.5  -2.7
+pred bkl      0.9 -1.3  -4.0 -8.5   1.0 -1.5  -5.3
+pred df       1.1 -0.5  -0.2  3.3   0.3 -0.3  -3.8
+pred mel     -0.7 -0.8  -6.2  6.5 -26.6 -7.5  -5.5
+pred nv      13.1  1.5  14.6 -2.8  25.6  9.2 -11.1
+pred vasc     0.1  0.5   0.7  4.8   0.5  2.7  28.4
+
+######## A3 ISIC 2020 by ISIC Archive attribution ########
+           arch                                                                                                  contributor  images  melanomas   mel->nv target %  mel->nv source % increase
+      ResNet-50                                                      Department of Dermatology, Hospital Clínic de Barcelona     179        179  81.5 [76.0, 86.0] 33.4 [28.3, 37.8]    +48.1
+      ResNet-50                                                                       Memorial Sloan Kettering Cancer Center     997        216  66.3 [61.1, 72.2] 33.4 [28.3, 37.8]    +32.9
+      ResNet-50                           Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital, Pascale Guitera     319        134  66.1 [56.7, 70.1] 33.4 [28.3, 37.8]    +32.7
+      ResNet-50 The University of Queensland Diamantina Institute, The University of Queensland, Dermatology Research Centre     124          9  62.2 [55.6, 66.7] 33.4 [28.3, 37.8]    +28.8
+      ResNet-50                                         ViDIR Group, Department of Dermatology, Medical University of Vienna    4374         43  90.1 [83.7, 95.3] 33.4 [28.3, 37.8]    +56.7
+EfficientNet-B3                                                      Department of Dermatology, Hospital Clínic de Barcelona     179        179  79.1 [72.6, 84.4] 33.1 [27.8, 37.2]    +46.0
+EfficientNet-B3                                                                       Memorial Sloan Kettering Cancer Center     997        216  61.4 [55.1, 64.4] 33.1 [27.8, 37.2]    +28.3
+EfficientNet-B3                           Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital, Pascale Guitera     319        134  60.8 [55.2, 66.4] 33.1 [27.8, 37.2]    +27.7
+EfficientNet-B3 The University of Queensland Diamantina Institute, The University of Queensland, Dermatology Research Centre     124          9  59.3 [44.4, 66.7] 33.1 [27.8, 37.2]    +26.2
+EfficientNet-B3                                         ViDIR Group, Department of Dermatology, Medical University of Vienna    4374         43  82.6 [74.4, 90.7] 33.1 [27.8, 37.2]    +49.5
+     ConvNeXt-T                                                      Department of Dermatology, Hospital Clínic de Barcelona     179        179  82.6 [77.7, 91.1] 35.5 [28.3, 45.0]    +47.1
+     ConvNeXt-T                                                                       Memorial Sloan Kettering Cancer Center     997        216  59.7 [52.3, 66.2] 35.5 [28.3, 45.0]    +24.1
+     ConvNeXt-T                           Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital, Pascale Guitera     319        134  60.2 [52.2, 65.7] 35.5 [28.3, 45.0]    +24.7
+     ConvNeXt-T The University of Queensland Diamantina Institute, The University of Queensland, Dermatology Research Centre     124          9  51.1 [44.4, 66.7] 35.5 [28.3, 45.0]    +15.6
+     ConvNeXt-T                                         ViDIR Group, Department of Dermatology, Medical University of Vienna    4374         43  88.4 [81.4, 90.7] 35.5 [28.3, 45.0]    +52.9
+         Swin-T                                                      Department of Dermatology, Hospital Clínic de Barcelona     179        179  83.2 [77.1, 89.4] 30.2 [23.8, 36.0]    +53.0
+         Swin-T                                                                       Memorial Sloan Kettering Cancer Center     997        216  63.7 [60.2, 68.1] 30.2 [23.8, 36.0]    +33.5
+         Swin-T                           Sydney Melanoma Diagnostic Center at Royal Prince Alfred Hospital, Pascale Guitera     319        134  61.3 [53.0, 68.7] 30.2 [23.8, 36.0]    +31.1
+         Swin-T The University of Queensland Diamantina Institute, The University of Queensland, Dermatology Research Centre     124          9  53.3 [44.4, 66.7] 30.2 [23.8, 36.0]    +23.1
+         Swin-T                                         ViDIR Group, Department of Dermatology, Medical University of Vienna    4374         43 93.5 [88.4, 100.0] 30.2 [23.8, 36.0]    +63.3
+contributors with < 20 melanomas are imprecise
+
+######## A4 HAM10000 'akiec' images in the ISIC 2019 ground truth ########
+isic19_label   AK  BCC   BKL   DF   MEL    NV  SCC  VASC
+dx                                                      
+akiec         130    0     0    0     0     0  197     0
+bcc             0  514     0    0     0     0    0     0
+bkl             0    0  1099    0     0     0    0     0
+df              0    0     0  115     0     0    0     0
+mel             0    0     0    0  1113     0    0     0
+nv              0    0     0    0     0  6705    0     0
+vasc            0    0     0    0     0     0    0   142
+
+HAM akiec images: 327; labelled AK in ISIC 2019: 130, SCC: 197
+non-HAM ISIC 2019 'akiec' in this study = AK only (SCC excluded)
+
+######## T5 image counts behind Table 5 ########
+HAM10000, all vs histopathology-confirmed:
+        all  histo
+dx                
+nv     6705   2498
+mel    1113   1113
+bkl    1099    766
+bcc     514    514
+akiec   327    327
+vasc    142     67
+df      115     55
+ISIC 2019 non-HAM, all vs histopathology-confirmed:
+        all  histo
+label             
+nv     6170   4082
+mel    3409   3407
+bcc    2809   2079
+bkl    1525   1050
+akiec   737    525
+scc     431    372
+df      124     93
+vasc    111     91
+
+######## LC local recalibration of the melanoma threshold (ISIC 2019, seed-42 fold models) ########
+           arch  local labelled images  of which melanomas (median) target sensitivity % target specificity %
+      ResNet-50                    100                           22        61.7 (SD 8.2)        78.7 (SD 7.6)
+      ResNet-50                    200                           46        62.0 (SD 5.5)        79.2 (SD 5.0)
+      ResNet-50                    500                          112        61.7 (SD 3.7)        79.8 (SD 3.0)
+      ResNet-50                   1000                          228        61.6 (SD 3.0)        79.9 (SD 2.1)
+EfficientNet-B3                    100                           22        62.8 (SD 6.9)        78.9 (SD 6.7)
+EfficientNet-B3                    200                           44        63.4 (SD 4.5)        79.0 (SD 4.6)
+EfficientNet-B3                    500                          114        62.8 (SD 2.8)        80.0 (SD 2.8)
+EfficientNet-B3                   1000                          225        63.0 (SD 2.2)        79.9 (SD 2.2)
+     ConvNeXt-T                    100                           21        60.0 (SD 6.7)        79.0 (SD 6.6)
+     ConvNeXt-T                    200                           45        59.9 (SD 4.9)        79.4 (SD 4.7)
+     ConvNeXt-T                    500                          114        59.7 (SD 3.7)        79.9 (SD 3.1)
+     ConvNeXt-T                   1000                          224        59.9 (SD 3.0)        79.8 (SD 2.1)
+         Swin-T                    100                           21        61.7 (SD 6.7)        79.3 (SD 6.2)
+         Swin-T                    200                           45        62.0 (SD 5.1)        79.3 (SD 4.7)
+         Swin-T                    500                          113        62.0 (SD 3.5)        79.5 (SD 2.8)
+         Swin-T                   1000                          227        61.8 (SD 3.0)        79.8 (SD 2.2)
+reference: compare with the source-validation threshold in section A1 (80%-val threshold rows, ISIC2019)
+DONE

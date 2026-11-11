@@ -1,0 +1,123 @@
+nohup: ignoring input
+14885 target masks -> seg_target
+lesion fraction of the model input under the standard pipeline (predicted masks)
+
+                          count   mean    std    min    25%    50%    75%    max
+source                                                                          
+BCN-like (1024x1024)    11982.0  0.348  0.232  0.000  0.160  0.306  0.501  0.999
+HAM10000                10015.0  0.338  0.221  0.000  0.160  0.294  0.484  1.000
+MSK-like (downsampled)   2074.0  0.257  0.240  0.004  0.072  0.163  0.383  1.000
+other                     829.0  0.380  0.248  0.017  0.182  0.321  0.529  0.997
+
+median by class:
+source  BCN-like (1024x1024)  HAM10000  MSK-like (downsampled)  other
+label                                                                
+akiec                  0.344     0.495                     NaN    NaN
+bcc                    0.296     0.291                     NaN    NaN
+bkl                    0.336     0.375                   0.218  0.417
+df                     0.286     0.403                     NaN    NaN
+mel                    0.419     0.394                   0.329  0.430
+nv                     0.233     0.264                   0.118  0.288
+vasc                   0.177     0.134                     NaN    NaN
+
+f* (HAM10000 median) = 0.2944
+
+after lesion-scale normalisation:
+                          count   mean    std    min    25%    50%    75%    max
+source                                                                          
+BCN-like (1024x1024)    11982.0  0.416  0.171  0.196  0.294  0.306  0.501  0.999
+HAM10000                10015.0  0.407  0.164  0.160  0.294  0.297  0.488  1.000
+MSK-like (downsampled)   2074.0  0.380  0.165  0.177  0.294  0.295  0.388  1.000
+other                     829.0  0.440  0.198  0.268  0.294  0.322  0.532  0.997
+examples (left: standard view, right: scale-normalised; green = predicted lesion) -> scale_examples.jpg
+fold 0: val_predictions.csv n=1002
+fold 0: test_predictions.csv n=2004
+fold 0: ood_predictions.csv n=14885
+fold 1: val_predictions.csv n=1002
+fold 1: test_predictions.csv n=2003
+fold 1: ood_predictions.csv n=14885
+fold 2: val_predictions.csv n=1002
+fold 2: test_predictions.csv n=2003
+fold 2: ood_predictions.csv n=14885
+fold 3: val_predictions.csv n=1002
+fold 3: test_predictions.csv n=2003
+fold 3: ood_predictions.csv n=14885
+fold 4: val_predictions.csv n=1002
+fold 4: test_predictions.csv n=2002
+fold 4: ood_predictions.csv n=14885
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/label_shift.py:305: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  tab["TOTAL"] = tab.sum(1)
+fold 0: val_predictions.csv n=1002
+fold 0: test_predictions.csv n=2004
+fold 0: ood_predictions.csv n=14885
+fold 1: val_predictions.csv n=1002
+fold 1: test_predictions.csv n=2003
+fold 1: ood_predictions.csv n=14885
+fold 2: val_predictions.csv n=1002
+fold 2: test_predictions.csv n=2003
+fold 2: ood_predictions.csv n=14885
+fold 3: val_predictions.csv n=1002
+fold 3: test_predictions.csv n=2003
+fold 3: ood_predictions.csv n=14885
+fold 4: val_predictions.csv n=1002
+fold 4: test_predictions.csv n=2002
+fold 4: ood_predictions.csv n=14885
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/label_shift.py:305: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  tab["TOTAL"] = tab.sum(1)
+SCALE DONE -> scale_all.txt, scale_examples.jpg

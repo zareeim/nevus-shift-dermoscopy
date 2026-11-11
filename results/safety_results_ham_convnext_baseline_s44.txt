@@ -1,0 +1,53 @@
+Safety analysis | ham_convnext_baseline_s44 | OOD n=14885 | 5-fold ensemble | 95% lesion-cluster bootstrap (1000)
+
+== 1. all OOD images ==
+         metric  raw_%       raw_CI  simple_%    simple_CI  diff_pts        diff_CI   p
+mel_sensitivity 36.726 [33.4, 40.0]    45.409 [42.0, 48.7]     8.683    [7.4, 10.0] 0.0
+      mel_to_nv 48.548 [45.2, 51.8]    32.473 [29.5, 35.5]   -16.075 [-17.7, -14.3] 0.0
+      nv_recall 92.771 [91.9, 93.8]    83.258 [81.8, 84.7]    -9.514  [-10.5, -8.6] 0.0
+   balanced_acc 46.340 [43.4, 49.5]    52.549 [49.3, 55.7]     6.209     [4.8, 7.6] 0.0
+per-class recall:
+        akiec    bcc    bkl     df    mel     nv   vasc
+raw     0.198  0.607  0.409  0.266  0.367  0.928  0.468
+simple  0.254  0.666  0.470  0.444  0.454  0.833  0.559
+
+== 2. where do true nevi go? (% of all nevi) ==
+        pred akiec  pred bcc  pred bkl  pred df  pred mel  pred nv  pred vasc
+raw            0.6       1.4       1.9      0.3       2.6     92.8        0.4
+simple         1.6       2.6       3.4      1.6       6.5     83.3        1.2
+
+== 3. per source proxy ==
+-- BCN-like (1024x1024) (n=11982, melanomas=2857, nevi=4206)
+         metric  raw_%       raw_CI  simple_%    simple_CI  diff_pts        diff_CI   p
+mel_sensitivity 38.222 [34.7, 42.0]    46.937 [43.3, 50.7]     8.715    [7.3, 10.2] 0.0
+      mel_to_nv 46.482 [42.8, 50.6]    30.452 [27.2, 34.2]   -16.031 [-17.9, -14.2] 0.0
+      nv_recall 92.320 [91.1, 93.6]    82.763 [81.0, 84.7]    -9.558  [-10.8, -8.3] 0.0
+   balanced_acc 46.394 [43.4, 49.6]    52.668 [49.5, 56.1]     6.274     [4.9, 7.8] 0.0
+-- MSK-like (downsampled) (n=2074, melanomas=374, nevi=1316)
+         metric  raw_%       raw_CI  simple_%    simple_CI  diff_pts        diff_CI     p
+mel_sensitivity 24.599 [20.3, 29.4]    33.422 [28.8, 38.3]     8.824    [5.8, 11.7] 0.000
+      mel_to_nv 63.904 [59.0, 69.0]    46.791 [41.6, 51.9]   -17.112 [-21.2, -13.4] 0.000
+      nv_recall 95.289 [94.1, 96.4]    86.626 [84.9, 88.5]    -8.663  [-10.1, -7.3] 0.000
+   balanced_acc 54.285 [51.9, 56.6]    55.902 [53.5, 58.4]     1.616     [0.2, 3.0] 0.026
+-- other (n=829, melanomas=178, nevi=648)
+         metric  raw_%       raw_CI  simple_%    simple_CI  diff_pts       diff_CI     p
+mel_sensitivity 38.202 [31.0, 45.1]    46.067 [38.5, 53.0]     7.865   [4.1, 12.1] 0.000
+      mel_to_nv 49.438 [42.7, 57.0]    34.831 [28.1, 41.4]   -14.607 [-19.9, -9.7] 0.000
+      nv_recall 90.586 [88.3, 92.9]    79.630 [76.8, 82.6]   -10.957 [-13.4, -8.6] 0.000
+   balanced_acc 54.041 [41.2, 76.8]    53.010 [40.1, 75.9]    -1.031   [-2.6, 0.6] 0.178
+
+== 4. per source: P(yhat=nv | y) and BBSE nevus-prior error decomposition (raw predictions) ==
+P(yhat=nv | true class):
+                         akiec    bcc    bkl     df    mel     nv   vasc
+set                                                                     
+source (own test folds)  0.043  0.045  0.141  0.070  0.363  0.948  0.056
+BCN-like (1024x1024)     0.254  0.204  0.374  0.556  0.465  0.923  0.387
+MSK-like (downsampled)   0.000  0.000  0.398  0.000  0.639  0.953  0.000
+other                    0.000  0.000  0.667  0.000  0.494  0.906  0.000
+contribution of each true class to the BBSE nevus-prior error (percentage points):
+                        akiec  bcc   bkl   df   mel    nv  vasc  TOTAL nv error
+source                                                                         
+BCN-like (1024x1024)     1.16  3.9  2.78  0.6  5.28 -0.93  0.36           13.15
+MSK-like (downsampled)   0.00  0.0  6.52  0.0  9.21  0.97  0.00           16.71
+other                    0.00  0.0  0.24  0.0  5.56 -4.28  0.00            1.52
+DONE

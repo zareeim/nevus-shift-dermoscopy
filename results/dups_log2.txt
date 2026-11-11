@@ -1,0 +1,12 @@
+HAM10000 vs ISIC2019 non-HAM: 306 hash candidates
+HAM10000 vs Derm7pt: 0 hash candidates
+HAM10000 vs ISIC2020: 810 hash candidates
+ISIC2019 non-HAM vs Derm7pt: 1 hash candidates
+ISIC2019 non-HAM vs ISIC2020: 121 hash candidates
+Derm7pt vs ISIC2020: 0 hash candidates
+
+confirmed near-duplicates (hash <= 20/256 bits AND mean colour difference < 6/255):
+set_a             set_b   
+ISIC2019 non-HAM  ISIC2020    16
+12 closest candidates -> dup_examples2.jpg (left / right), thumb_mae: [0.72, 0.74, 0.75, 0.75, 0.76, 0.76, 0.76, 0.78, 0.79, 0.79, 0.79, 0.79]
+DONE

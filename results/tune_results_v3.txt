@@ -1,0 +1,9 @@
+                 balanced_accuracy     macro_f1     macro_auc     accuracy         ece     mel_sens@spec80     mel_sens@spec90     n_folds
+                              mean std     mean std      mean std     mean std    mean std            mean std            mean std        
+experiment                                                                                                                                
+baseline                    0.7033 NaN   0.6973 NaN    0.9421 NaN   0.8653 NaN  0.0752 NaN          0.9375 NaN          0.7500 NaN       1
+hgpb_eta1_aux0.3            0.7113 NaN   0.7064 NaN    0.9295 NaN   0.8583 NaN  0.0844 NaN          0.8571 NaN          0.7500 NaN       1
+hgpb_eta1_aux1.0            0.6807 NaN   0.6710 NaN    0.9124 NaN   0.8523 NaN  0.0711 NaN          0.8839 NaN          0.7679 NaN       1
+hgpb_eta2_aux0.3            0.6891 NaN   0.6790 NaN    0.9412 NaN   0.8553 NaN  0.0810 NaN          0.9107 NaN          0.7946 NaN       1
+hgpb_eta2_aux1.0            0.6887 NaN   0.6864 NaN    0.9316 NaN   0.8543 NaN  0.0834 NaN          0.8929 NaN          0.7946 NaN       1
+chosen: eta=1 aux_w=0.3

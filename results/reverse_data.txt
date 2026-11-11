@@ -1,0 +1,20 @@
+dropped classes not in HAM10000: ['scc']
+BCN-like training set: 11982 images, 3454 lesions
+label  akiec  bcc  bkl  df  mel   nv  vasc
+fold                                      
+0        148  562  228  25  571  841    22
+1        147  562  228  25  571  842    22
+2        147  562  227  25  572  841    22
+3        147  561  227  25  572  841    23
+4        148  562  228  24  571  841    22
+HAM10000 target: 10015 images
+class prior (%)  BCN-like vs HAM:
+       BCN-like   HAM
+label                
+akiec       6.2   3.3
+bcc        23.4   5.1
+bkl         9.5  11.0
+df          1.0   1.1
+mel        23.8  11.1
+nv         35.1  66.9
+vasc        0.9   1.4

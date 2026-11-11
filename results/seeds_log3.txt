@@ -1,0 +1,178 @@
+nohup: ignoring input
+skip runs_chromo_cv/ham_baseline_s43_f0
+skip runs_chromo_cv/ham_baseline_s43_f1
+config=baseline device=cuda train=7010 val=1002
+ep 001 loss 1.6125 val bacc 0.5969 f1 0.5623 auc 0.9134 (57s)
+ep 002 loss 1.2098 val bacc 0.6518 f1 0.6473 auc 0.9235 (56s)
+ep 003 loss 1.1359 val bacc 0.7159 f1 0.6845 auc 0.9529 (58s)
+ep 004 loss 1.0132 val bacc 0.7261 f1 0.7002 auc 0.9483 (60s)
+ep 005 loss 0.9619 val bacc 0.7132 f1 0.6972 auc 0.9526 (60s)
+ep 006 loss 0.8992 val bacc 0.7590 f1 0.7478 auc 0.9626 (61s)
+ep 007 loss 0.8647 val bacc 0.7648 f1 0.7535 auc 0.9635 (62s)
+ep 008 loss 0.8385 val bacc 0.7581 f1 0.7507 auc 0.9563 (62s)
+ep 009 loss 0.8013 val bacc 0.7537 f1 0.7581 auc 0.9519 (62s)
+ep 010 loss 0.7788 val bacc 0.7533 f1 0.7695 auc 0.9514 (63s)
+ep 011 loss 0.7494 val bacc 0.7576 f1 0.7699 auc 0.9466 (63s)
+ep 012 loss 0.7200 val bacc 0.7613 f1 0.7645 auc 0.9466 (63s)
+ep 013 loss 0.7012 val bacc 0.7664 f1 0.7670 auc 0.9406 (66s)
+ep 014 loss 0.6827 val bacc 0.7632 f1 0.7739 auc 0.9426 (64s)
+ep 015 loss 0.6574 val bacc 0.7606 f1 0.7676 auc 0.9412 (64s)
+ep 016 loss 0.6473 val bacc 0.7574 f1 0.7675 auc 0.9325 (65s)
+ep 017 loss 0.6308 val bacc 0.7499 f1 0.7550 auc 0.9270 (64s)
+ep 018 loss 0.6207 val bacc 0.7466 f1 0.7449 auc 0.9232 (64s)
+ep 019 loss 0.6086 val bacc 0.7429 f1 0.7479 auc 0.9229 (64s)
+ep 020 loss 0.6010 val bacc 0.7282 f1 0.7374 auc 0.9269 (64s)
+ep 021 loss 0.5889 val bacc 0.7329 f1 0.7439 auc 0.9277 (64s)
+ep 022 loss 0.5831 val bacc 0.7327 f1 0.7357 auc 0.9275 (64s)
+ep 023 loss 0.5751 val bacc 0.7360 f1 0.7426 auc 0.9260 (64s)
+ep 024 loss 0.5695 val bacc 0.7321 f1 0.7411 auc 0.9243 (64s)
+ep 025 loss 0.5647 val bacc 0.7283 f1 0.7362 auc 0.9228 (64s)
+ep 026 loss 0.5643 val bacc 0.7329 f1 0.7411 auc 0.9230 (64s)
+ep 027 loss 0.5603 val bacc 0.7329 f1 0.7425 auc 0.9228 (64s)
+ep 028 loss 0.5601 val bacc 0.7316 f1 0.7413 auc 0.9226 (64s)
+ep 029 loss 0.5580 val bacc 0.7287 f1 0.7430 auc 0.9222 (64s)
+ep 030 loss 0.5576 val bacc 0.7276 f1 0.7424 auc 0.9216 (64s)
+VAL: {"balanced_accuracy": 0.7276, "macro_f1": 0.7424, "macro_auc": 0.9216}
+TEST: {"balanced_accuracy": 0.7805, "macro_f1": 0.7901, "macro_auc": 0.9308}
+skip runs_chromo_cv/ham_baseline_s43_f3
+skip runs_chromo_cv/ham_baseline_s43_f4
+skip runs_ood_pf/ham_baseline_s43_f0
+skip runs_ood_pf/ham_baseline_s43_f1
+fold 2: 14885 OOD predictions -> runs_ood_pf/ham_baseline_s43_f2
+skip runs_ood_pf/ham_baseline_s43_f3
+skip runs_ood_pf/ham_baseline_s43_f4
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/label_shift.py:305: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  tab["TOTAL"] = tab.sum(1)
+skip runs_chromo_cv/ham_baseline_s44_f0
+skip runs_chromo_cv/ham_baseline_s44_f1
+skip runs_chromo_cv/ham_baseline_s44_f2
+config=baseline device=cuda train=7010 val=1002
+ep 001 loss 1.6012 val bacc 0.6110 f1 0.5657 auc 0.9142 (56s)
+ep 002 loss 1.2017 val bacc 0.6649 f1 0.6394 auc 0.9568 (59s)
+ep 003 loss 1.1082 val bacc 0.7170 f1 0.6915 auc 0.9636 (61s)
+ep 004 loss 1.0249 val bacc 0.7232 f1 0.6938 auc 0.9579 (62s)
+ep 005 loss 0.9573 val bacc 0.7450 f1 0.7259 auc 0.9574 (63s)
+ep 006 loss 0.9123 val bacc 0.7503 f1 0.7279 auc 0.9668 (64s)
+ep 007 loss 0.8871 val bacc 0.7278 f1 0.7082 auc 0.9576 (63s)
+ep 008 loss 0.8441 val bacc 0.7409 f1 0.7238 auc 0.9656 (63s)
+ep 009 loss 0.8077 val bacc 0.7502 f1 0.7329 auc 0.9687 (64s)
+ep 010 loss 0.7752 val bacc 0.7362 f1 0.7174 auc 0.9654 (63s)
+ep 011 loss 0.7550 val bacc 0.7316 f1 0.7283 auc 0.9646 (63s)
+ep 012 loss 0.7204 val bacc 0.7424 f1 0.7402 auc 0.9666 (64s)
+ep 013 loss 0.6982 val bacc 0.7407 f1 0.7319 auc 0.9626 (63s)
+ep 014 loss 0.6842 val bacc 0.7489 f1 0.7465 auc 0.9584 (63s)
+ep 015 loss 0.6597 val bacc 0.7362 f1 0.7331 auc 0.9553 (63s)
+ep 016 loss 0.6475 val bacc 0.7301 f1 0.7294 auc 0.9513 (63s)
+ep 017 loss 0.6380 val bacc 0.7152 f1 0.7086 auc 0.9514 (63s)
+ep 018 loss 0.6187 val bacc 0.7128 f1 0.7088 auc 0.9435 (63s)
+ep 019 loss 0.6069 val bacc 0.7052 f1 0.7010 auc 0.9393 (63s)
+ep 020 loss 0.5986 val bacc 0.7080 f1 0.7092 auc 0.9385 (63s)
+ep 021 loss 0.5891 val bacc 0.7046 f1 0.7082 auc 0.9339 (63s)
+ep 022 loss 0.5807 val bacc 0.7057 f1 0.7141 auc 0.9266 (63s)
+ep 023 loss 0.5743 val bacc 0.7082 f1 0.7131 auc 0.9229 (63s)
+ep 024 loss 0.5702 val bacc 0.7030 f1 0.7101 auc 0.9191 (63s)
+ep 025 loss 0.5618 val bacc 0.7045 f1 0.7116 auc 0.9165 (63s)
+ep 026 loss 0.5636 val bacc 0.6976 f1 0.7060 auc 0.9163 (63s)
+ep 027 loss 0.5645 val bacc 0.6976 f1 0.7060 auc 0.9172 (64s)
+ep 028 loss 0.5591 val bacc 0.6996 f1 0.7084 auc 0.9188 (63s)
+ep 029 loss 0.5564 val bacc 0.6970 f1 0.7061 auc 0.9207 (63s)
+ep 030 loss 0.5583 val bacc 0.6944 f1 0.7049 auc 0.9214 (63s)
+VAL: {"balanced_accuracy": 0.6944, "macro_f1": 0.7049, "macro_auc": 0.9214}
+TEST: {"balanced_accuracy": 0.7739, "macro_f1": 0.7671, "macro_auc": 0.9353}
+config=baseline device=cuda train=7011 val=1002
+ep 001 loss 1.5989 val bacc 0.5871 f1 0.5653 auc 0.9341 (61s)
+ep 002 loss 1.2242 val bacc 0.7766 f1 0.7498 auc 0.9577 (63s)
+ep 003 loss 1.1297 val bacc 0.7871 f1 0.7513 auc 0.9635 (64s)
+ep 004 loss 1.0314 val bacc 0.7865 f1 0.7588 auc 0.9655 (63s)
+ep 005 loss 0.9608 val bacc 0.7767 f1 0.7456 auc 0.9668 (63s)
+ep 006 loss 0.9110 val bacc 0.7756 f1 0.7475 auc 0.9712 (64s)
+ep 007 loss 0.8730 val bacc 0.7843 f1 0.7618 auc 0.9673 (63s)
+ep 008 loss 0.8391 val bacc 0.7791 f1 0.7582 auc 0.9702 (63s)
+ep 009 loss 0.8010 val bacc 0.7988 f1 0.7706 auc 0.9758 (63s)
+ep 010 loss 0.7682 val bacc 0.8068 f1 0.7858 auc 0.9759 (63s)
+ep 011 loss 0.7397 val bacc 0.8188 f1 0.7906 auc 0.9743 (63s)
+ep 012 loss 0.7108 val bacc 0.8165 f1 0.7890 auc 0.9742 (63s)
+ep 013 loss 0.7079 val bacc 0.8191 f1 0.7887 auc 0.9726 (63s)
+ep 014 loss 0.6857 val bacc 0.8083 f1 0.7802 auc 0.9723 (63s)
+ep 015 loss 0.6825 val bacc 0.8123 f1 0.7925 auc 0.9734 (63s)
+ep 016 loss 0.6368 val bacc 0.8173 f1 0.8000 auc 0.9749 (63s)
+ep 017 loss 0.6278 val bacc 0.8106 f1 0.7958 auc 0.9735 (63s)
+ep 018 loss 0.6189 val bacc 0.8215 f1 0.8072 auc 0.9706 (63s)
+ep 019 loss 0.6053 val bacc 0.8121 f1 0.8046 auc 0.9681 (64s)
+ep 020 loss 0.5954 val bacc 0.8225 f1 0.8129 auc 0.9661 (63s)
+ep 021 loss 0.5878 val bacc 0.8294 f1 0.8191 auc 0.9656 (63s)
+ep 022 loss 0.5780 val bacc 0.8433 f1 0.8301 auc 0.9657 (63s)
+ep 023 loss 0.5734 val bacc 0.8439 f1 0.8297 auc 0.9657 (63s)
+ep 024 loss 0.5714 val bacc 0.8467 f1 0.8336 auc 0.9652 (63s)
+ep 025 loss 0.5629 val bacc 0.8374 f1 0.8258 auc 0.9642 (63s)
+ep 026 loss 0.5618 val bacc 0.8326 f1 0.8217 auc 0.9639 (63s)
+ep 027 loss 0.5591 val bacc 0.8329 f1 0.8224 auc 0.9634 (63s)
+ep 028 loss 0.5584 val bacc 0.8311 f1 0.8197 auc 0.9631 (64s)
+ep 029 loss 0.5594 val bacc 0.8247 f1 0.8171 auc 0.9628 (63s)
+ep 030 loss 0.5585 val bacc 0.8243 f1 0.8159 auc 0.9625 (63s)
+VAL: {"balanced_accuracy": 0.8243, "macro_f1": 0.8159, "macro_auc": 0.9625}
+TEST: {"balanced_accuracy": 0.7585, "macro_f1": 0.7504, "macro_auc": 0.9384}
+fold 0: 14885 OOD predictions -> runs_ood_pf/ham_baseline_s44_f0
+fold 1: 14885 OOD predictions -> runs_ood_pf/ham_baseline_s44_f1
+fold 2: 14885 OOD predictions -> runs_ood_pf/ham_baseline_s44_f2
+fold 3: 14885 OOD predictions -> runs_ood_pf/ham_baseline_s44_f3
+fold 4: 14885 OOD predictions -> runs_ood_pf/ham_baseline_s44_f4
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/robot/workspace/mina_ws/hgpb_skin/label_shift.py:305: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  tab["TOTAL"] = tab.sum(1)
+SEEDS DONE -> seeds_all.txt

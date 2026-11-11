@@ -1,0 +1,31 @@
+Unsupervised appearance adaptation per source | 5-fold ensemble | OOD n=14885
+
+                  BA  macroF1     acc  BA[other]  BA[MSK-like (downsampled)]  BA[BCN-like (1024x1024)]
+variant                                                                                               
+none+raw      0.4557   0.4472  0.6229     0.6371                      0.4998                    0.4605
+none+simple   0.5420   0.4434  0.6119     0.6429                      0.5171                    0.5446
+adabn+raw     0.4160   0.4010  0.5884     0.6412                      0.5647                    0.4203
+adabn+simple  0.5166   0.3997  0.5638     0.6152                      0.5559                    0.5209
+tent+raw      0.4149   0.4084  0.5910     0.6381                      0.4820                    0.4269
+tent+simple   0.4751   0.4169  0.5872     0.6192                      0.4987                    0.4877
+
+paired lesion-cluster bootstrap vs none+simple (points):
+      method  dBA_vs_none+simple          BA_CI95  BA_p  dMacroF1_vs_none+simple        F1_CI95
+    none+raw              -8.629  [-11.04, -6.48] 0.000                    0.386 [-1.43, +2.05]
+   adabn+raw             -12.597  [-15.50, -9.96] 0.000                   -4.234 [-6.30, -2.26]
+adabn+simple              -2.538   [-4.31, -0.77] 0.004                   -4.366 [-5.32, -3.35]
+    tent+raw             -12.709 [-15.68, -10.01] 0.000                   -3.493 [-5.71, -1.46]
+ tent+simple              -6.693   [-9.01, -4.69] 0.000                   -2.646 [-3.89, -1.45]
+
+paired lesion-cluster bootstrap vs none+raw (points):
+      method  dBA_vs_none+raw         BA_CI95  BA_p  dMacroF1_vs_none+raw        F1_CI95
+ none+simple            8.629 [+6.48, +11.04] 0.000                -0.386 [-2.05, +1.43]
+   adabn+raw           -3.967  [-5.67, -2.44] 0.000                -4.619 [-6.08, -3.31]
+adabn+simple            6.092  [+4.08, +8.26] 0.000                -4.751 [-6.62, -2.72]
+    tent+raw           -4.080  [-5.84, -2.47] 0.000                -3.879 [-5.38, -2.52]
+ tent+simple            1.936  [+0.08, +3.81] 0.044                -3.031 [-4.41, -1.51]
+
+PRIMARY (adabn+simple minus none+simple, BA): -2.54 pts, CI [-4.31, -0.77] -> NOT MET
+
+note: adaptation is transductive (each source adapts on its own unlabeled images, then predicts them).
+DONE

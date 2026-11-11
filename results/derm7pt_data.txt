@@ -1,0 +1,36 @@
+diagnosis
+basal cell carcinoma                 bcc
+blue nevus                            nv
+clark nevus                           nv
+combined nevus                        nv
+congenital nevus                      nv
+dermal nevus                          nv
+dermatofibroma                        df
+lentigo                              bkl
+melanoma                             mel
+melanoma (0.76 to 1.5 mm)            mel
+melanoma (in situ)                   mel
+melanoma (less than 0.76 mm)         mel
+melanoma (more than 1.5 mm)          mel
+melanoma metastasis             EXCLUDED
+melanosis                       EXCLUDED
+miscellaneous                   EXCLUDED
+recurrent nevus                       nv
+reed or spitz nevus                   nv
+seborrheic keratosis                 bkl
+vascular lesion                     vasc
+
+excluded: 28
+diagnosis
+melanosis              16
+miscellaneous           8
+melanoma metastasis     4
+
+kept 983 images, 983 lesions
+label
+nv      58.5
+mel     25.2
+bkl      7.0
+bcc      4.3
+vasc     3.0
+df       2.0

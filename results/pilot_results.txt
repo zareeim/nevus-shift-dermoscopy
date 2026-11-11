@@ -1,0 +1,12 @@
+validation balanced accuracy
+config        fold0    fold1     mean
+baseline     0.7074   0.7173   0.7123
+od_ref       0.6924   0.7441   0.7183
+chromo       0.6984   0.7000   0.6992
+full         0.7242   0.7459   0.7350
+
+(a) full - baseline >= 1.5 points on both folds : True
+(b) full > od_ref on both folds                  : True
+(c) physics sanity check passed on both folds    : True
+
+DECISION: GO - continue to the full study

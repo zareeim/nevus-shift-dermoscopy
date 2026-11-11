@@ -1,0 +1,234 @@
+107 cached, 15209 to fetch
+  0/15209
+  500/15209
+  1000/15209
+  1500/15209
+  2000/15209
+  2500/15209
+  3000/15209
+  3500/15209
+  4000/15209
+  4500/15209
+  5000/15209
+  5500/15209
+  6000/15209
+  6500/15209
+  7000/15209
+  7500/15209
+  8000/15209
+  8500/15209
+  9000/15209
+  9500/15209
+  10000/15209
+  10500/15209
+  11000/15209
+  11500/15209
+  12000/15209
+  12500/15209
+  13000/15209
+  13500/15209
+  14000/15209
+  14500/15209
+  15000/15209
+example record: {"public": true, "isic_id": "ISIC_0000000", "copyright_license": "CC-0", "attribution": "Anonymous", "files": {"full": {"url": "https://isic-archive.s3.amazonaws.com/images/ISIC_0000000.jpg", "size": 50993}, "thumbnail_256": {"url": "https://isic-archive.s3.amazonaws.com/thumbnails/ISIC_0000000_thumbnail.jpg", "size": 5073}}, "metadata": {"acquisition": {"pixels_x": 1022, "pixels_y": 767, "image_type": "dermoscopic"}, "clinical": {"concomitant_biopsy": false, "sex": "female", "anatom_site_1": "Trunk", "anatom_site_2": "Anterior trunk", "anatom_site_3": "Anterior abdomen", "diagnosis_1": "Benign", "diagnosis_2": "Benign melanocytic proliferations", "diagnosis_3": "Nevus", "diagnosis_4": "Nevus, Atypical, Dysplastic, or Clark", "diagnosis_5": "Nevus, Dysplastic", "melanocytic": true, "age_approx": 55}}}
+15316 rows -> isic_metadata.csv; API errors: 16 (0.1%)
+non-empty attribution: 99.9%; distinct attributions: 2
+metadata fields returned: ['acquisition.pixels_x', 'acquisition.pixels_y', 'acquisition.image_type', 'clinical.concomitant_biopsy', 'clinical.sex', 'clinical.anatom_site_1', 'clinical.anatom_site_2', 'clinical.anatom_site_3', 'clinical.diagnosis_1', 'clinical.diagnosis_2', 'clinical.diagnosis_3', 'clinical.diagnosis_4', 'clinical.diagnosis_5', 'clinical.melanocytic', 'clinical.age_approx', 'clinical.diagnosis_confirm_type', 'clinical.anatom_site_4', 'clinical.anatom_site_special', 'clinical.anatom_site_5', 'clinical.personal_hx_mm', 'clinical.family_hx_mm', 'clinical.clin_size_long_diam_mm', 'acquisition.dermoscopic_type', 'clinical.lesion_id', 'clinical.patient_id']
+attribution (top 15):
+attribution
+Hospital Clínic de Barcelona    12397
+Anonymous                        2903
+clinical.diagnosis_confirm_type:
+clinical.diagnosis_confirm_type
+histopathology                                   11699
+NaN                                               2471
+confocal microscopy with consensus dermoscopy      766
+single image expert consensus                      380
+Robustness analyses | 1000 lesion-cluster bootstraps
+
+== P. P(yhat=nv | y) per class, raw rule, source -> target (95% CI of the target - source difference) ==
+model                 ResNet-50
+target                 ISIC2019
+akiec     0.05->0.26 [0.2, 0.3]
+bcc       0.05->0.22 [0.1, 0.2]
+bkl       0.14->0.41 [0.2, 0.3]
+df        0.13->0.65 [0.4, 0.6]
+mel       0.33->0.50 [0.1, 0.2]
+vasc      0.08->0.46 [0.2, 0.5]
+
+model                  ResNet-50
+target                   Derm7pt
+bcc        0.05->0.36 [0.2, 0.5]
+bkl        0.14->0.33 [0.1, 0.3]
+df        0.13->0.10 [-0.2, 0.1]
+mel        0.33->0.42 [0.0, 0.2]
+vasc       0.08->0.45 [0.2, 0.6]
+
+model           EfficientNet-B3
+target                 ISIC2019
+akiec     0.05->0.20 [0.1, 0.2]
+bcc       0.05->0.21 [0.1, 0.2]
+bkl       0.14->0.39 [0.2, 0.3]
+df        0.09->0.54 [0.3, 0.6]
+mel       0.34->0.47 [0.1, 0.2]
+vasc      0.04->0.46 [0.3, 0.6]
+
+model             EfficientNet-B3
+target                    Derm7pt
+bcc         0.05->0.17 [0.0, 0.2]
+bkl         0.14->0.39 [0.1, 0.4]
+df        0.09->0.00 [-0.1, -0.0]
+mel         0.34->0.42 [0.0, 0.1]
+vasc        0.04->0.48 [0.3, 0.6]
+
+model                ConvNeXt-T
+target                 ISIC2019
+akiec     0.04->0.28 [0.2, 0.3]
+bcc       0.05->0.21 [0.1, 0.2]
+bkl       0.13->0.42 [0.3, 0.3]
+df        0.11->0.56 [0.3, 0.6]
+mel       0.35->0.48 [0.1, 0.2]
+vasc      0.05->0.45 [0.3, 0.6]
+
+model                 ConvNeXt-T
+target                   Derm7pt
+bcc        0.05->0.21 [0.0, 0.3]
+bkl        0.13->0.33 [0.1, 0.3]
+df        0.11->0.10 [-0.1, 0.2]
+mel       0.35->0.37 [-0.1, 0.1]
+vasc       0.05->0.48 [0.3, 0.6]
+
+model                    Swin-T
+target                 ISIC2019
+akiec     0.04->0.30 [0.2, 0.3]
+bcc       0.05->0.21 [0.1, 0.2]
+bkl       0.12->0.43 [0.3, 0.3]
+df        0.09->0.57 [0.3, 0.6]
+mel       0.31->0.51 [0.2, 0.2]
+vasc      0.05->0.41 [0.2, 0.5]
+
+model                     Swin-T
+target                   Derm7pt
+bcc        0.05->0.24 [0.1, 0.3]
+bkl        0.12->0.39 [0.2, 0.4]
+df        0.09->0.05 [-0.1, 0.1]
+mel       0.31->0.36 [-0.0, 0.1]
+vasc       0.05->0.45 [0.2, 0.6]
+
+== H. primary hypotheses, Holm-corrected over 24 tests (p floor = 1/1000) ==
+          model   target               test  effect_pts  p_boot  p_holm  significant_holm_0.05
+      ResNet-50 ISIC2019   mel->nv increase     16.7675   0.001   0.024                   True
+      ResNet-50 ISIC2019 other->nv increase     19.7120   0.001   0.024                   True
+      ResNet-50 ISIC2019    simple - raw BA      9.7648   0.001   0.024                   True
+      ResNet-50  Derm7pt   mel->nv increase      8.9155   0.012   0.048                   True
+      ResNet-50  Derm7pt other->nv increase     23.2479   0.001   0.024                   True
+      ResNet-50  Derm7pt    simple - raw BA      7.2287   0.001   0.024                   True
+EfficientNet-B3 ISIC2019   mel->nv increase     13.6269   0.001   0.024                   True
+EfficientNet-B3 ISIC2019 other->nv increase     17.9166   0.001   0.024                   True
+EfficientNet-B3 ISIC2019    simple - raw BA      8.6294   0.001   0.024                   True
+EfficientNet-B3  Derm7pt   mel->nv increase      8.4225   0.024   0.072                  False
+EfficientNet-B3  Derm7pt other->nv increase     20.5325   0.001   0.024                   True
+EfficientNet-B3  Derm7pt    simple - raw BA      6.3970   0.001   0.024                   True
+     ConvNeXt-T ISIC2019   mel->nv increase     13.1611   0.001   0.024                   True
+     ConvNeXt-T ISIC2019 other->nv increase     20.5360   0.001   0.024                   True
+     ConvNeXt-T ISIC2019    simple - raw BA      7.0116   0.001   0.024                   True
+     ConvNeXt-T  Derm7pt   mel->nv increase      1.9227   0.572   0.572                  False
+     ConvNeXt-T  Derm7pt other->nv increase     21.0787   0.001   0.024                   True
+     ConvNeXt-T  Derm7pt    simple - raw BA      4.3706   0.001   0.024                   True
+         Swin-T ISIC2019   mel->nv increase     20.0203   0.001   0.024                   True
+         Swin-T ISIC2019 other->nv increase     21.1625   0.001   0.024                   True
+         Swin-T ISIC2019    simple - raw BA      6.8849   0.001   0.024                   True
+         Swin-T  Derm7pt   mel->nv increase      5.5626   0.140   0.280                  False
+         Swin-T  Derm7pt other->nv increase     23.0903   0.001   0.024                   True
+         Swin-T  Derm7pt    simple - raw BA      5.5225   0.001   0.024                   True
+
+== Q. case mix: source behaviour on histopathology-confirmed HAM10000 lesions only (raw rule) ==
+-- ResNet-50
+      P(nv|y)                                       n                                
+set   HAM all HAM histo only ISIC 2019 target HAM all HAM histo only ISIC 2019 target
+class                                                                                
+akiec   0.046          0.046            0.256   327.0          327.0            737.0
+bcc     0.049          0.049            0.221   514.0          514.0           2809.0
+bkl     0.137          0.168            0.412  1099.0          766.0           1525.0
+df      0.130          0.182            0.645   115.0           55.0            124.0
+mel     0.334          0.334            0.502  1113.0         1113.0           3409.0
+nv      0.951          0.886            0.935  6705.0         2498.0           6170.0
+vasc    0.077          0.119            0.459   142.0           67.0            111.0
+
+-- EfficientNet-B3
+      P(nv|y)                                       n                                
+set   HAM all HAM histo only ISIC 2019 target HAM all HAM histo only ISIC 2019 target
+class                                                                                
+akiec   0.046          0.046            0.202   327.0          327.0            737.0
+bcc     0.054          0.054            0.211   514.0          514.0           2809.0
+bkl     0.136          0.159            0.390  1099.0          766.0           1525.0
+df      0.087          0.127            0.540   115.0           55.0            124.0
+mel     0.335          0.335            0.471  1113.0         1113.0           3409.0
+nv      0.957          0.899            0.930  6705.0         2498.0           6170.0
+vasc    0.042          0.060            0.459   142.0           67.0            111.0
+
+-- ConvNeXt-T
+      P(nv|y)                                       n                                
+set   HAM all HAM histo only ISIC 2019 target HAM all HAM histo only ISIC 2019 target
+class                                                                                
+akiec   0.037          0.037            0.284   327.0          327.0            737.0
+bcc     0.051          0.051            0.213   514.0          514.0           2809.0
+bkl     0.126          0.151            0.416  1099.0          766.0           1525.0
+df      0.113          0.145            0.565   115.0           55.0            124.0
+mel     0.348          0.348            0.479  1113.0         1113.0           3409.0
+nv      0.954          0.889            0.930  6705.0         2498.0           6170.0
+vasc    0.049          0.075            0.450   142.0           67.0            111.0
+
+-- Swin-T
+      P(nv|y)                                       n                                
+set   HAM all HAM histo only ISIC 2019 target HAM all HAM histo only ISIC 2019 target
+class                                                                                
+akiec   0.037          0.037            0.300   327.0          327.0            737.0
+bcc     0.053          0.053            0.213   514.0          514.0           2809.0
+bkl     0.125          0.149            0.429  1099.0          766.0           1525.0
+df      0.087          0.091            0.573   115.0           55.0            124.0
+mel     0.307          0.307            0.507  1113.0         1113.0           3409.0
+nv      0.946          0.868            0.931  6705.0         2498.0           6170.0
+vasc    0.049          0.075            0.405   142.0           67.0            111.0
+
+dx_type counts in HAM10000:
+dx_type  confocal  consensus  follow_up  histo
+dx                                            
+akiec           0          0          0    327
+bcc             0          0          0    514
+bkl            69        264          0    766
+df              0         60          0     55
+mel             0          0          0   1113
+nv              0        503       3704   2498
+vasc            0         75          0     67
+
+== R. Derm7pt melanomas by subtype: % predicted as nevus (raw rule) ==
+model                         ConvNeXt-T  EfficientNet-B3  ResNet-50  Swin-T
+subtype                                                                     
+melanoma                           100.0            100.0      100.0   100.0
+melanoma (0.76 to 1.5 mm)           20.8             30.2       39.6    18.9
+melanoma (in situ)                  56.2             51.6       56.2    51.6
+melanoma (less than 0.76 mm)        34.3             42.2       38.2    36.3
+melanoma (more than 1.5 mm)         28.6             39.3       28.6    32.1
+subtype
+melanoma                          1
+melanoma (0.76 to 1.5 mm)        53
+melanoma (in situ)               64
+melanoma (less than 0.76 mm)    102
+melanoma (more than 1.5 mm)      28
+
+== S. skipped (no --isic_meta) ==
+
+== T. near-duplicate pairs (difference hash, Hamming <= 4 of 64) ==
+set_a             set_b           
+HAM10000          Derm7pt              1294
+                  ISIC2019 non-HAM    62532
+ISIC2019 non-HAM  Derm7pt              1896
+
+closest pairs shown in dup_examples.jpg (left: first set, right: second set) - inspect by eye
+
+== U. lesion-scale control excluding suspicious masks (standard-view fraction < 0.01 or > 0.95) ==
+-- ResNet-50: mel->nv increase standard +17.0 | scale-normalised +16.2 (reduction 5%) | excluded source 73, target 136
+-- Swin-T: mel->nv increase standard +20.1 | scale-normalised +18.2 (reduction 10%) | excluded source 73, target 136
+
+DONE

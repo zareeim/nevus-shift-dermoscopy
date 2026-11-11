@@ -1,0 +1,30 @@
+lesion fraction of the model input under the standard pipeline (predicted masks)
+
+                          count   mean    std    min    25%    50%    75%    max
+source                                                                          
+BCN-like (1024x1024)    11982.0  0.348  0.232  0.000  0.160  0.306  0.501  0.999
+HAM10000                10015.0  0.338  0.221  0.000  0.160  0.294  0.484  1.000
+MSK-like (downsampled)   2074.0  0.257  0.240  0.004  0.072  0.163  0.383  1.000
+other                     829.0  0.380  0.248  0.017  0.182  0.321  0.529  0.997
+
+median by class:
+source  BCN-like (1024x1024)  HAM10000  MSK-like (downsampled)  other
+label                                                                
+akiec                  0.344     0.495                     NaN    NaN
+bcc                    0.296     0.291                     NaN    NaN
+bkl                    0.336     0.375                   0.218  0.417
+df                     0.286     0.403                     NaN    NaN
+mel                    0.419     0.394                   0.329  0.430
+nv                     0.233     0.264                   0.118  0.288
+vasc                   0.177     0.134                     NaN    NaN
+
+f* (HAM10000 median) = 0.2944
+
+after lesion-scale normalisation:
+                          count   mean    std    min    25%    50%    75%    max
+source                                                                          
+BCN-like (1024x1024)    11982.0  0.416  0.171  0.196  0.294  0.306  0.501  0.999
+HAM10000                10015.0  0.407  0.164  0.160  0.294  0.297  0.488  1.000
+MSK-like (downsampled)   2074.0  0.380  0.165  0.177  0.294  0.295  0.388  1.000
+other                     829.0  0.440  0.198  0.268  0.294  0.322  0.532  0.997
+DONE

@@ -1,0 +1,29 @@
+Primary tests, seed-pooled estimand (mean over 3 seeds x 5 fold models), paired cluster bootstrap B=10000, null-centred two-sided p (sensitivity: percentile inversion), Holm over 24 tests
+   architecture   target               test  estimate (3 seeds x 5 folds)   CI_low  CI_high     B  p_centred  p_pct_inversion  holm_centred  sig_centred  holm_pct_inversion  sig_pct_inversion
+      ResNet-50 ISIC2019   mel->nv increase                      16.34153 11.80527 20.93077 10000    0.00010          0.00020       0.00240         True             0.00480               True
+      ResNet-50 ISIC2019 other->nv increase                      20.66765 18.61886 22.72686 10000    0.00010          0.00020       0.00240         True             0.00480               True
+      ResNet-50 ISIC2019  simple-raw BA (T)                       6.60809  5.47450  7.77263 10000    0.00010          0.00020       0.00240         True             0.00480               True
+      ResNet-50  Derm7pt   mel->nv increase                       9.18276  3.35465 14.80590 10000    0.00250          0.00080       0.01000         True             0.00480               True
+      ResNet-50  Derm7pt other->nv increase                      22.54696 17.12305 28.24848 10000    0.00010          0.00020       0.00240         True             0.00480               True
+      ResNet-50  Derm7pt  simple-raw BA (T)                       6.12049  4.36176  7.97830 10000    0.00010          0.00020       0.00240         True             0.00480               True
+EfficientNet-B3 ISIC2019   mel->nv increase                      15.54773 11.27429 20.04917 10000    0.00010          0.00020       0.00240         True             0.00480               True
+EfficientNet-B3 ISIC2019 other->nv increase                      19.80006 17.79244 21.80142 10000    0.00010          0.00020       0.00240         True             0.00480               True
+EfficientNet-B3 ISIC2019  simple-raw BA (T)                       5.91182  4.80246  7.07644 10000    0.00010          0.00020       0.00240         True             0.00480               True
+EfficientNet-B3  Derm7pt   mel->nv increase                       7.71040  2.04101 13.50719 10000    0.00820          0.00680       0.02460         True             0.02040               True
+EfficientNet-B3  Derm7pt other->nv increase                      22.23357 16.09420 28.46106 10000    0.00010          0.00020       0.00240         True             0.00480               True
+EfficientNet-B3  Derm7pt  simple-raw BA (T)                       5.85535  4.34841  7.55593 10000    0.00010          0.00020       0.00240         True             0.00480               True
+     ConvNeXt-T ISIC2019   mel->nv increase                      13.12439  8.62264 17.73191 10000    0.00010          0.00020       0.00240         True             0.00480               True
+     ConvNeXt-T ISIC2019 other->nv increase                      20.02601 18.05393 22.01803 10000    0.00010          0.00020       0.00240         True             0.00480               True
+     ConvNeXt-T ISIC2019  simple-raw BA (T)                       3.07692  2.53577  3.66287 10000    0.00010          0.00020       0.00240         True             0.00480               True
+     ConvNeXt-T  Derm7pt   mel->nv increase                       3.80661 -2.03590  9.57896 10000    0.18898          0.18978       0.18898        False             0.18978              False
+     ConvNeXt-T  Derm7pt other->nv increase                      22.14146 16.44839 28.05952 10000    0.00010          0.00020       0.00240         True             0.00480               True
+     ConvNeXt-T  Derm7pt  simple-raw BA (T)                       2.98973  1.91356  4.23674 10000    0.00010          0.00020       0.00240         True             0.00480               True
+         Swin-T ISIC2019   mel->nv increase                      18.65979 14.35429 23.00786 10000    0.00010          0.00020       0.00240         True             0.00480               True
+         Swin-T ISIC2019 other->nv increase                      20.80973 18.76660 22.84871 10000    0.00010          0.00020       0.00240         True             0.00480               True
+         Swin-T ISIC2019  simple-raw BA (T)                       4.04882  3.22231  4.94317 10000    0.00010          0.00020       0.00240         True             0.00480               True
+         Swin-T  Derm7pt   mel->nv increase                       7.11859  1.39011 12.76952 10000    0.01370          0.01280       0.02740         True             0.02560               True
+         Swin-T  Derm7pt other->nv increase                      24.76086 18.77963 30.73621 10000    0.00010          0.00020       0.00240         True             0.00480               True
+         Swin-T  Derm7pt  simple-raw BA (T)                       3.99324  2.61945  5.45547 10000    0.00010          0.00020       0.00240         True             0.00480               True
+
+significant (centred, Holm): 23 of 24 | (inversion, Holm): 23 of 24
+DONE

@@ -1,0 +1,108 @@
+fig1_deltaC: ResNet-50, P(yhat|y) target - source, cells with |delta| >= 5 labelled; nv row outlined
+fig2 ResNet-50: nevus-prior error from decomposition +13.90 = sum of contributions +13.90
+fig2 EfficientNet-B3: nevus-prior error from decomposition +12.70 = sum of contributions +12.70
+fig2 ConvNeXt-T: nevus-prior error from decomposition +12.40 = sum of contributions +12.40
+fig2 Swin-T: nevus-prior error from decomposition +14.53 = sum of contributions +14.53
+arch   ConvNeXt-T  EfficientNet-B3  ResNet-50  Swin-T
+class                                                
+akiec        1.05             0.84       0.90    1.17
+bcc          3.31             3.46       3.27    3.18
+bkl          3.38             3.37       3.61    3.82
+df           0.41             0.39       0.47    0.45
+mel          6.58             6.95       7.63    7.83
+nv          -2.61            -2.63      -2.28   -2.20
+vasc         0.27             0.31       0.30    0.29
+fig3 source: transferred 80%-val threshold point FPR 19.5, TPR 86.9
+fig3 ISIC2019: transferred 80%-val threshold point FPR 34.4, TPR 73.5
+fig3 Derm7pt: transferred 80%-val threshold point FPR 35.1, TPR 81.6
+fig3 ISIC2020: transferred 80%-val threshold point FPR 8.1, TPR 43.1
+fig4 HAM10000 test folds: signed (conf - acc) pooled = -5.8 points
+fig4 ISIC 2019: signed (conf - acc) pooled = +12.4 points
+fig4 ISIC 2020: signed (conf - acc) pooled = -6.8 points
+
+######## VI ISIC 2020 by contributor, with patient-cluster CIs (mean over 15 models) ########
+           arch                                   contributor  images  patients  mel  bkl   nv         mel->nv %         bkl->nv %       nv->mel %
+      ResNet-50 Department of Dermatology, Hospital Clínic de     179       134  179    0    0 81.5 [76.6, 85.7]               n/a             n/a
+      ResNet-50        Memorial Sloan Kettering Cancer Center     997       420  216  167  614 66.3 [61.4, 71.1] 43.7 [36.9, 50.7]  1.0 [0.6, 1.5]
+      ResNet-50 Sydney Melanoma Diagnostic Center at Royal Pr     319       167  134   24  161 66.1 [59.3, 73.2] 67.8 [53.7, 80.8] 7.2 [4.1, 11.0]
+      ResNet-50 The University of Queensland Diamantina Insti     124        69    9   30   85 62.2 [27.6, 93.3] 41.3 [22.2, 55.8]  0.5 [0.0, 1.8]
+      ResNet-50 ViDIR Group, Department of Dermatology, Medic    4374       432   43    0 4331 90.1 [83.8, 95.5]               n/a  0.2 [0.1, 0.3]
+EfficientNet-B3 Department of Dermatology, Hospital Clínic de     179       134  179    0    0 79.1 [73.8, 84.0]               n/a             n/a
+EfficientNet-B3        Memorial Sloan Kettering Cancer Center     997       420  216  167  614 61.4 [56.1, 66.7] 36.6 [29.8, 43.7]  1.0 [0.6, 1.5]
+EfficientNet-B3 Sydney Melanoma Diagnostic Center at Royal Pr     319       167  134   24  161 60.8 [53.1, 68.2] 65.6 [51.6, 79.4] 7.6 [4.5, 11.2]
+EfficientNet-B3 The University of Queensland Diamantina Insti     124        69    9   30   85 59.3 [28.7, 88.3] 44.2 [24.6, 61.0]  0.2 [0.0, 0.4]
+EfficientNet-B3 ViDIR Group, Department of Dermatology, Medic    4374       432   43    0 4331 82.6 [74.3, 89.7]               n/a  0.2 [0.1, 0.3]
+     ConvNeXt-T Department of Dermatology, Hospital Clínic de     179       134  179    0    0 82.6 [78.2, 86.8]               n/a             n/a
+     ConvNeXt-T        Memorial Sloan Kettering Cancer Center     997       420  216  167  614 59.7 [54.3, 64.7] 39.0 [32.6, 45.7]  1.5 [1.0, 1.9]
+     ConvNeXt-T Sydney Melanoma Diagnostic Center at Royal Pr     319       167  134   24  161 60.2 [52.5, 67.8] 60.3 [45.3, 75.3] 8.9 [5.4, 12.9]
+     ConvNeXt-T The University of Queensland Diamantina Insti     124        69    9   30   85 51.1 [20.6, 80.0] 41.3 [22.9, 55.7]  0.3 [0.0, 0.8]
+     ConvNeXt-T ViDIR Group, Department of Dermatology, Medic    4374       432   43    0 4331 88.4 [80.8, 94.8]               n/a  0.2 [0.1, 0.3]
+         Swin-T Department of Dermatology, Hospital Clínic de     179       134  179    0    0 83.2 [78.7, 87.4]               n/a             n/a
+         Swin-T        Memorial Sloan Kettering Cancer Center     997       420  216  167  614 63.7 [58.3, 69.0] 37.2 [30.7, 44.0]  0.9 [0.5, 1.4]
+         Swin-T Sydney Melanoma Diagnostic Center at Royal Pr     319       167  134   24  161 61.3 [53.8, 68.4] 63.1 [49.1, 76.4] 9.4 [5.5, 13.7]
+         Swin-T The University of Queensland Diamantina Insti     124        69    9   30   85 53.3 [20.0, 83.0] 45.3 [25.3, 61.2]  0.2 [0.0, 0.4]
+         Swin-T ViDIR Group, Department of Dermatology, Medic    4374       432   43    0 4331 93.5 [88.9, 97.4]               n/a  0.1 [0.1, 0.2]
+
+######## CI melanoma ROC-AUC and operating point, seed-pooled (15 models), paired cluster bootstrap B=1000 ########
+  target            arch                   measure  estimate  CI_low  CI_high
+ISIC2019       ResNet-50            ROC-AUC source     0.901   0.889    0.914
+ISIC2019       ResNet-50            ROC-AUC target     0.772   0.756    0.787
+ISIC2019       ResNet-50              ROC-AUC drop     0.129   0.110    0.150
+ISIC2019       ResNet-50 sens target (80%-val thr)     0.735   0.714    0.757
+ISIC2019       ResNet-50 spec target (80%-val thr)     0.656   0.646    0.665
+ISIC2019 EfficientNet-B3            ROC-AUC source     0.902   0.891    0.914
+ISIC2019 EfficientNet-B3            ROC-AUC target     0.770   0.754    0.784
+ISIC2019 EfficientNet-B3              ROC-AUC drop     0.132   0.114    0.151
+ISIC2019 EfficientNet-B3 sens target (80%-val thr)     0.714   0.691    0.734
+ISIC2019 EfficientNet-B3 spec target (80%-val thr)     0.684   0.674    0.692
+ISIC2019      ConvNeXt-T            ROC-AUC source     0.879   0.863    0.893
+ISIC2019      ConvNeXt-T            ROC-AUC target     0.754   0.739    0.769
+ISIC2019      ConvNeXt-T              ROC-AUC drop     0.124   0.101    0.144
+ISIC2019      ConvNeXt-T sens target (80%-val thr)     0.684   0.662    0.705
+ISIC2019      ConvNeXt-T spec target (80%-val thr)     0.689   0.680    0.698
+ISIC2019          Swin-T            ROC-AUC source     0.913   0.901    0.924
+ISIC2019          Swin-T            ROC-AUC target     0.774   0.759    0.789
+ISIC2019          Swin-T              ROC-AUC drop     0.139   0.119    0.158
+ISIC2019          Swin-T sens target (80%-val thr)     0.699   0.677    0.722
+ISIC2019          Swin-T spec target (80%-val thr)     0.701   0.692    0.711
+ Derm7pt       ResNet-50            ROC-AUC source     0.901   0.888    0.914
+ Derm7pt       ResNet-50            ROC-AUC target     0.816   0.792    0.843
+ Derm7pt       ResNet-50              ROC-AUC drop     0.085   0.054    0.113
+ Derm7pt       ResNet-50 sens target (80%-val thr)     0.816   0.781    0.853
+ Derm7pt       ResNet-50 spec target (80%-val thr)     0.649   0.627    0.673
+ Derm7pt EfficientNet-B3            ROC-AUC source     0.902   0.891    0.915
+ Derm7pt EfficientNet-B3            ROC-AUC target     0.843   0.819    0.866
+ Derm7pt EfficientNet-B3              ROC-AUC drop     0.059   0.034    0.087
+ Derm7pt EfficientNet-B3 sens target (80%-val thr)     0.833   0.799    0.863
+ Derm7pt EfficientNet-B3 spec target (80%-val thr)     0.681   0.658    0.703
+ Derm7pt      ConvNeXt-T            ROC-AUC source     0.879   0.864    0.892
+ Derm7pt      ConvNeXt-T            ROC-AUC target     0.819   0.795    0.843
+ Derm7pt      ConvNeXt-T              ROC-AUC drop     0.059   0.032    0.089
+ Derm7pt      ConvNeXt-T sens target (80%-val thr)     0.843   0.813    0.872
+ Derm7pt      ConvNeXt-T spec target (80%-val thr)     0.587   0.564    0.609
+ Derm7pt          Swin-T            ROC-AUC source     0.913   0.901    0.924
+ Derm7pt          Swin-T            ROC-AUC target     0.832   0.807    0.856
+ Derm7pt          Swin-T              ROC-AUC drop     0.081   0.054    0.108
+ Derm7pt          Swin-T sens target (80%-val thr)     0.833   0.799    0.866
+ Derm7pt          Swin-T spec target (80%-val thr)     0.655   0.630    0.679
+ISIC2020       ResNet-50            ROC-AUC source     0.901   0.889    0.913
+ISIC2020       ResNet-50            ROC-AUC target     0.639   0.613    0.661
+ISIC2020       ResNet-50              ROC-AUC drop     0.262   0.236    0.291
+ISIC2020       ResNet-50 sens target (80%-val thr)     0.431   0.400    0.462
+ISIC2020       ResNet-50 spec target (80%-val thr)     0.919   0.913    0.924
+ISIC2020 EfficientNet-B3            ROC-AUC source     0.902   0.890    0.914
+ISIC2020 EfficientNet-B3            ROC-AUC target     0.680   0.656    0.702
+ISIC2020 EfficientNet-B3              ROC-AUC drop     0.222   0.196    0.249
+ISIC2020 EfficientNet-B3 sens target (80%-val thr)     0.503   0.471    0.533
+ISIC2020 EfficientNet-B3 spec target (80%-val thr)     0.879   0.872    0.886
+ISIC2020      ConvNeXt-T            ROC-AUC source     0.879   0.864    0.894
+ISIC2020      ConvNeXt-T            ROC-AUC target     0.642   0.617    0.668
+ISIC2020      ConvNeXt-T              ROC-AUC drop     0.237   0.207    0.267
+ISIC2020      ConvNeXt-T sens target (80%-val thr)     0.499   0.469    0.530
+ISIC2020      ConvNeXt-T spec target (80%-val thr)     0.891   0.884    0.898
+ISIC2020          Swin-T            ROC-AUC source     0.913   0.901    0.924
+ISIC2020          Swin-T            ROC-AUC target     0.673   0.648    0.698
+ISIC2020          Swin-T              ROC-AUC drop     0.240   0.213    0.266
+ISIC2020          Swin-T sens target (80%-val thr)     0.462   0.430    0.494
+ISIC2020          Swin-T spec target (80%-val thr)     0.927   0.920    0.933
+DONE

@@ -1,0 +1,110 @@
+##### segmentation quality (automatic vs dermatologist masks, val+test of each fold)
+fold 0: {"n":3006,"dice_mean":0.9458192437069448,"iou_mean":0.9043615414360825,"dice_below_0.7_frac":0.018629407850964737}
+fold 1: {"n":3005,"dice_mean":0.9461715483699042,"iou_mean":0.9045932137704112,"dice_below_0.7_frac":0.014309484193011647}
+fold 2: {"n":3005,"dice_mean":0.9477751587148117,"iou_mean":0.9066305129753423,"dice_below_0.7_frac":0.011647254575707155}
+fold 3: {"n":3005,"dice_mean":0.9470164637136028,"iou_mean":0.9062843670767927,"dice_below_0.7_frac":0.013643926788685524}
+fold 4: {"n":3004,"dice_mean":0.9495879228023455,"iou_mean":0.9096480509663089,"dice_below_0.7_frac":0.011984021304926764}
+
+##### 5-fold results (test folds, automatic masks)
+             balanced_accuracy         macro_f1         macro_auc         accuracy             ece         mel_sens@spec80         mel_sens@spec90         n_folds
+                          mean     std     mean     std      mean     std     mean     std    mean     std            mean     std            mean     std        
+experiment                                                                                                                                                        
+ham_baseline            0.7525  0.0242   0.7639  0.0137    0.9390  0.0071   0.8618  0.0069  0.0808  0.0046          0.8652  0.0225          0.7664  0.0329       5
+ham_chromo              0.7536  0.0302   0.7646  0.0161    0.9381  0.0168   0.8648  0.0054  0.0816  0.0034          0.8643  0.0254          0.7736  0.0221       5
+ham_full                0.7679  0.0325   0.7743  0.0224    0.9441  0.0081   0.8669  0.0089  0.0820  0.0040          0.8814  0.0175          0.7745  0.0166       5
+ham_od_ref              0.7550  0.0255   0.7677  0.0203    0.9423  0.0091   0.8633  0.0081  0.0792  0.0044          0.8760  0.0174          0.7817  0.0274       5
+
+##### PRIMARY: full minus baseline
+ham_full minus ham_baseline  (paired bootstrap, n=10015 pooled test images)
+{
+ "balanced_accuracy": {
+  "delta": 0.015400149711100042,
+  "ci95": [
+   0.0016523821165884106,
+   0.029848544249481152
+  ],
+  "p_two_sided": 0.031
+ },
+ "macro_f1": {
+  "delta": 0.011226125422357791,
+  "ci95": [
+   -0.001301589356754057,
+   0.0237951112906215
+  ],
+  "p_two_sided": 0.071
+ },
+ "macro_auc": {
+  "delta": 0.0050240872576681195,
+  "ci95": [
+   -0.0019846465607733536,
+   0.012151844696653773
+  ],
+  "p_two_sided": 0.149
+ }
+}
+
+##### full minus od_ref (does the physics matter?)
+ham_full minus ham_od_ref  (paired bootstrap, n=10015 pooled test images)
+{
+ "balanced_accuracy": {
+  "delta": 0.012880953067913592,
+  "ci95": [
+   -0.0023447298693943766,
+   0.028358891880805905
+  ],
+  "p_two_sided": 0.093
+ },
+ "macro_f1": {
+  "delta": 0.006876427233035831,
+  "ci95": [
+   -0.0065219401569525295,
+   0.02046456604929345
+  ],
+  "p_two_sided": 0.318
+ },
+ "macro_auc": {
+  "delta": 0.0016322824443333328,
+  "ci95": [
+   -0.004759759435488087,
+   0.008457976765590777
+  ],
+  "p_two_sided": 0.623
+ }
+}
+
+##### full minus chromo (does the self-reference matter?)
+ham_full minus ham_chromo  (paired bootstrap, n=10015 pooled test images)
+{
+ "balanced_accuracy": {
+  "delta": 0.014286004805974972,
+  "ci95": [
+   -0.0012254193857167749,
+   0.029301228126384048
+  ],
+  "p_two_sided": 0.066
+ },
+ "macro_f1": {
+  "delta": 0.00968206226120294,
+  "ci95": [
+   -0.004020591851975616,
+   0.023676150311316233
+  ],
+  "p_two_sided": 0.169
+ },
+ "macro_auc": {
+  "delta": 0.005972715389356953,
+  "ci95": [
+   -0.0004048829798523612,
+   0.012437696002612858
+  ],
+  "p_two_sided": 0.066
+ }
+}
+
+##### physics sanity check per fold
+fold 0: {"1_hemoglobin_highest_in_vasc":true,"2_dermal_melanin_mel_gt_nv":true,"3_epidermal_melanin_pigmented_gt_vasc":true,"W_drift_from_physical_init":4.733221066999249e-05,"passed":true}
+fold 1: {"1_hemoglobin_highest_in_vasc":true,"2_dermal_melanin_mel_gt_nv":true,"3_epidermal_melanin_pigmented_gt_vasc":true,"W_drift_from_physical_init":3.802233186434023e-05,"passed":true}
+fold 2: {"1_hemoglobin_highest_in_vasc":true,"2_dermal_melanin_mel_gt_nv":true,"3_epidermal_melanin_pigmented_gt_vasc":true,"W_drift_from_physical_init":3.6878464015899226e-05,"passed":true}
+fold 3: {"1_hemoglobin_highest_in_vasc":true,"2_dermal_melanin_mel_gt_nv":true,"3_epidermal_melanin_pigmented_gt_vasc":true,"W_drift_from_physical_init":3.0829385650577024e-05,"passed":true}
+fold 4: {"1_hemoglobin_highest_in_vasc":false,"2_dermal_melanin_mel_gt_nv":true,"3_epidermal_melanin_pigmented_gt_vasc":true,"W_drift_from_physical_init":2.4903451048885472e-05,"passed":false}
+DONE

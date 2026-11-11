@@ -1,0 +1,72 @@
+##### chosen setting: eta=1 aux_w=0.3
+
+##### RAW predictions
+                      balanced_accuracy         macro_f1         macro_auc         accuracy             ece         mel_sens@spec80         mel_sens@spec90         n_folds
+                                   mean     std     mean     std      mean     std     mean     std    mean     std            mean     std            mean     std        
+experiment                                                                                                                                                                 
+ham_resnet50_baseline            0.7686  0.0246   0.7802  0.0138    0.9500  0.0092   0.8703  0.0062  0.0822  0.0058          0.8841  0.0226          0.7871  0.0293       5
+ham_resnet50_hgpb                0.7622  0.0347   0.7788  0.0269    0.9439  0.0133   0.8693  0.0083  0.0792  0.0039          0.8805  0.0203          0.7628  0.0358       5
+
+ham_resnet50_hgpb minus ham_resnet50_baseline  (paired bootstrap, n=10015 pooled test images)
+{
+ "balanced_accuracy": {
+  "delta": -0.006425833551108484,
+  "ci95": [
+   -0.021212858888961038,
+   0.008414577391703065
+  ],
+  "p_two_sided": 0.408
+ },
+ "macro_f1": {
+  "delta": -0.0013976979141014922,
+  "ci95": [
+   -0.013433336130667934,
+   0.011134598808982646
+  ],
+  "p_two_sided": 0.868
+ },
+ "macro_auc": {
+  "delta": -0.006322428919298462,
+  "ci95": [
+   -0.01217637042894385,
+   -0.0007794757342901397
+  ],
+  "p_two_sided": 0.023
+ }
+}
+
+##### AFTER logit adjustment (tau chosen on validation)
+                      balanced_accuracy         macro_f1         macro_auc         accuracy             ece         mel_sens@spec80         mel_sens@spec90         n_folds
+                                   mean     std     mean     std      mean     std     mean     std    mean     std            mean     std            mean     std        
+experiment                                                                                                                                                                 
+ham_resnet50_baseline            0.7972  0.0126   0.7431  0.0352    0.9381  0.0138   0.8577  0.0151  0.2783  0.0856          0.8814  0.0225          0.7915  0.0339       5
+ham_resnet50_hgpb                0.7938  0.0234   0.7302  0.0230    0.9327  0.0190   0.8512  0.0119  0.3007  0.0215          0.8805  0.0128          0.7682  0.0308       5
+
+ham_resnet50_hgpb minus ham_resnet50_baseline  (paired bootstrap, n=10015 pooled test images)
+{
+ "balanced_accuracy": {
+  "delta": -0.0034596466195371267,
+  "ci95": [
+   -0.017065977240674525,
+   0.009176882234046625
+  ],
+  "p_two_sided": 0.587
+ },
+ "macro_f1": {
+  "delta": -0.008079164831198749,
+  "ci95": [
+   -0.020244990279020336,
+   0.0042916389282864065
+  ],
+  "p_two_sided": 0.201
+ },
+ "macro_auc": {
+  "delta": -0.0023151631502945635,
+  "ci95": [
+   -0.008992194321477947,
+   0.003926500188360534
+  ],
+  "p_two_sided": 0.498
+ }
+}
+DONE
