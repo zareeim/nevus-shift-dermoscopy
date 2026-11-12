@@ -40,3 +40,12 @@ Earlier ensemble-based scripts (`ensemble.py`, `evaluate.py`) are kept for the a
 
 ## Licence
 MIT (code). The datasets keep their own licences.
+
+## Additional analyses (review8.py)
+
+| Result in the paper | Script | Output |
+| --- | --- | --- |
+| Cluster counts (Table 1) | code/review8.py, section 1 | results/review8_results.txt |
+| Decomposition check, predicted vs observed condition B (Section 4.2) | code/review8.py, section 2 | results/review8_results.txt |
+| Oracle threshold at 80% specificity (Section 4.3) | code/review8.py, section 3 | results/review8_results.txt |
+| Dark-vignette stratification (Section 4.4) | code/review8.py, section 5 | results/review8_results.txt |
