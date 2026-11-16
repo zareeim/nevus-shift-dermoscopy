@@ -1,0 +1,59 @@
+== 1. BBSE nevus-prior error decomposed by true class, all three targets (mean over 3 seeds x 5 fold models) ==
+contribution of class j = A[nv, j] * pi_T(j), A = C_val^-1 (C_T - C_val); points of the nevus prior
+  target            arch total BBSE unclipped akiec  bcc  bkl   df  mel   nv vasc
+ISIC2019       ResNet-50 +13.9          +13.9  +0.9 +3.3 +3.6 +0.5 +7.6 -2.3 +0.3
+ISIC2019 EfficientNet-B3 +12.7          +12.7  +0.8 +3.5 +3.4 +0.4 +7.0 -2.6 +0.3
+ISIC2019      ConvNeXt-T +12.4          +12.4  +1.0 +3.3 +3.4 +0.4 +6.6 -2.6 +0.3
+ISIC2019          Swin-T +14.5          +14.5  +1.2 +3.2 +3.8 +0.5 +7.8 -2.2 +0.3
+ Derm7pt       ResNet-50  +3.3           +3.3  +0.0 +0.5 +1.7 +0.0 +4.8 -5.0 +1.3
+ Derm7pt EfficientNet-B3  +3.4           +3.4  +0.0 +0.3 +2.1 -0.1 +3.2 -3.5 +1.4
+ Derm7pt      ConvNeXt-T  +0.9           +0.9  +0.0 +0.4 +1.8 -0.1 +2.4 -4.8 +1.3
+ Derm7pt          Swin-T  +3.0           +3.0  +0.0 +0.5 +2.4 +0.0 +3.4 -4.5 +1.2
+ISIC2020       ResNet-50 +12.3          +12.3  +0.0 +0.0 +1.6 +0.0 +6.7 +4.0 +0.0
+ISIC2020 EfficientNet-B3 +10.2          +10.2  +0.0 +0.0 +1.4 +0.0 +6.0 +2.9 +0.0
+ISIC2020      ConvNeXt-T +11.3          +11.3  +0.0 +0.0 +1.4 +0.0 +6.0 +3.9 +0.0
+ISIC2020          Swin-T +11.9          +11.9  +0.0 +0.0 +1.4 +0.0 +6.6 +3.9 +0.0
+
+== 2. per-class P(pred = nv | y) and P(pred != y | y = nv), source -> target, and target class shares (ResNet-50, mean of 15 models) ==
+-- ISIC2019
+class         rate source % target % target share %
+akiec  akiec -> nv      4.9     27.0            5.0
+  bcc    bcc -> nv      6.0     23.6           18.9
+  bkl    bkl -> nv     13.3     41.8           10.2
+   df     df -> nv     14.5     61.6            0.8
+  mel    mel -> nv     33.4     49.8           22.9
+   nv nv -> not nv      5.1      9.1           41.5
+ vasc   vasc -> nv      6.0     43.1            0.7
+-- Derm7pt
+class         rate source % target % target share %
+akiec  akiec -> nv      4.9   absent            0.0
+  bcc    bcc -> nv      6.0     24.6            4.3
+  bkl    bkl -> nv     13.3     33.8            7.0
+   df     df -> nv     14.5     22.3            2.0
+  mel    mel -> nv     33.4     42.6           25.2
+   nv nv -> not nv      5.1     10.7           58.5
+ vasc   vasc -> nv      6.0     47.8            3.0
+-- ISIC2020
+class         rate source % target % target share %
+akiec  akiec -> nv      4.9   absent            0.0
+  bcc    bcc -> nv      6.0   absent            0.0
+  bkl    bkl -> nv     13.3     46.0            3.7
+   df     df -> nv     14.5   absent            0.0
+  mel    mel -> nv     33.4     72.6            9.7
+   nv nv -> not nv      5.1      1.8           86.6
+ vasc   vasc -> nv      6.0   absent            0.0
+
+== 3. melanoma-to-nevus rate and melanoma sensitivity under the simple rule argmax q/m_S (mean over 15 models; [min, max] of the 15) ==
+  target            arch raw mel->nv s->t simple mel->nv s->t increase raw      increase simple simple mel sens s->t
+ISIC2019       ResNet-50     33.4 -> 49.8        19.7 -> 26.0        +16.3   +6.3 [-1.5, +12.5]         64.0 -> 41.7
+ISIC2019 EfficientNet-B3     33.1 -> 48.6        20.9 -> 31.2        +15.5  +10.4 [+0.5, +19.7]         64.3 -> 38.8
+ISIC2019      ConvNeXt-T     35.5 -> 48.6        30.6 -> 40.4        +13.1   +9.8 [+3.1, +18.4]         58.9 -> 39.1
+ISIC2019          Swin-T     30.2 -> 48.9        22.3 -> 36.7        +18.7  +14.4 [+6.8, +23.8]         66.2 -> 39.3
+ Derm7pt       ResNet-50     33.4 -> 42.6        19.7 -> 21.7         +9.2   +2.0 [-7.6, +10.6]         64.0 -> 56.8
+ Derm7pt EfficientNet-B3     33.1 -> 40.8        20.9 -> 25.1         +7.7   +4.3 [-2.2, +13.9]         64.3 -> 58.1
+ Derm7pt      ConvNeXt-T     35.5 -> 39.3        30.6 -> 30.5         +3.8    -0.0 [-6.0, +8.5]         58.9 -> 56.6
+ Derm7pt          Swin-T     30.2 -> 37.3        22.3 -> 25.8         +7.1   +3.6 [-5.4, +11.1]         66.2 -> 58.7
+ISIC2020       ResNet-50     33.4 -> 72.6        19.7 -> 51.7        +39.2 +32.0 [+25.4, +40.0]         64.0 -> 19.4
+ISIC2020 EfficientNet-B3     33.1 -> 68.2        20.9 -> 52.6        +35.1 +31.7 [+22.7, +37.8]         64.3 -> 21.2
+ISIC2020      ConvNeXt-T     35.5 -> 68.9        30.6 -> 61.8        +33.3 +31.2 [+22.6, +42.4]         58.9 -> 19.6
+ISIC2020          Swin-T     30.2 -> 71.2        22.3 -> 60.7        +41.0 +38.4 [+28.5, +46.0]         66.2 -> 18.6

@@ -49,3 +49,4 @@ MIT (code). The datasets keep their own licences.
 | Decomposition check, predicted vs observed condition B (Section 4.2) | code/review8.py, section 2 | results/review8_results.txt |
 | Oracle threshold at 80% specificity (Section 4.3) | code/review8.py, section 3 | results/review8_results.txt |
 | Dark-vignette stratification (Section 4.4) | code/review8.py, section 5 | results/review8_results.txt |
+| BBSE decomposition on all targets (Section 4.6); simple-rule melanoma-to-nevus rates (Section 4.7) | code/review9.py | results/review9_results.txt |
